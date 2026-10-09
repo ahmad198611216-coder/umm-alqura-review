@@ -1,0 +1,229 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grammar in the Beauty Shop</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#6b2d5c;--plum2:#8e3f7a;--rose:#e0507f;--blush:#fde8ef;--gold:#c9932e;--gold2:#f3d68c;--cream:#fffaf6;--ink:#3a2433;--muted:#7d6573;--mint:#21907f;--orange:#d96a28}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#2a1426;font-family:'Inter',system-ui,sans-serif;color:var(--ink)}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;overflow:hidden;transform-origin:50% 50%;background:radial-gradient(circle at 8% 0%,#ffe3ee 0,transparent 42%),radial-gradient(circle at 100% 100%,#efe3fb 0,transparent 48%),var(--cream)}
+.sc{position:absolute;inset:0;padding:60px 140px 150px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;animation:sc var(--len) linear var(--d) both;opacity:0}
+@keyframes sc{0%{opacity:0}4%{opacity:1}95%{opacity:1}100%{opacity:0}}
+.fi{animation:fi .8s cubic-bezier(.2,.8,.2,1) var(--d) both}
+@keyframes fi{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.pop{animation:pop .7s cubic-bezier(.3,1.6,.5,1) var(--d) both}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.sl{animation:sl .8s cubic-bezier(.2,.8,.2,1) var(--d) both}
+@keyframes sl{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:none}}
+.mark{background:linear-gradient(transparent 60%,var(--gold2) 60%) no-repeat;background-size:0 100%;animation:mk .8s ease var(--d) forwards}
+@keyframes mk{to{background-size:100% 100%}}
+.float{animation:fl 3s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-14px)}}
+.kick{display:inline-block;background:var(--blush);color:var(--rose);padding:10px 26px;border-radius:999px;font-weight:800;letter-spacing:3px;font-size:24px;text-transform:uppercase}
+h1{font-weight:800;color:var(--plum);font-size:88px;letter-spacing:-2px;line-height:1.05;margin:22px 0 14px}
+h2{font-weight:800;color:var(--plum);font-size:72px;letter-spacing:-1.5px;line-height:1.05;margin:18px 0 26px}
+.lead{font-size:36px;color:var(--muted);font-weight:600;line-height:1.4}
+.card{background:#fff;border-radius:30px;padding:30px 36px;box-shadow:0 16px 44px rgba(107,45,92,.13);border:2px solid #f5e3ea}
+.big{font-size:44px;font-weight:700;line-height:1.35}
+.mid{font-size:34px;font-weight:600;line-height:1.4}
+.hl{color:var(--rose)}.hp{color:var(--plum2)}.ho{color:var(--orange)}.hm{color:var(--mint)}
+.em{font-size:90px;line-height:1}
+.row{display:flex;gap:28px;align-items:stretch}
+.formula{display:flex;gap:16px;align-items:center;font-size:44px;font-weight:800}
+.formula span{background:var(--blush);color:var(--plum);padding:12px 26px;border-radius:20px}
+.formula b{color:var(--muted)}
+.cap{position:absolute;left:50%;bottom:46px;transform:translateX(-50%);background:rgba(58,22,52,.9);color:#fff;font-size:34px;font-weight:600;padding:18px 40px;border-radius:20px;white-space:nowrap;border-bottom:5px solid var(--gold)}
+.capw{position:absolute;inset:0;animation:sc var(--len) linear var(--d) both;opacity:0}
+.tense{display:grid;grid-template-columns:340px 1fr;gap:14px 26px;font-size:36px;font-weight:600;align-items:center}
+.tense .t{background:var(--blush);color:var(--plum);border-radius:16px;padding:12px 20px;font-weight:800;font-size:30px}
+.prod{flex:1;text-align:center}
+.prod .nm{font-size:38px;font-weight:800;color:var(--plum);margin-top:12px}
+.prod .sp{font-size:28px;color:var(--muted);margin-top:8px;font-weight:600}
+.scale{position:relative;width:820px;height:300px;margin:0 auto}
+.beam{position:absolute;left:0;right:0;top:120px;height:22px;border-radius:12px;background:linear-gradient(90deg,var(--plum2),var(--rose));transform-origin:50% 50%}
+.beam.t{animation:tilt 1s cubic-bezier(.3,1.6,.5,1) var(--d) both}
+@keyframes tilt{from{transform:rotate(0)}to{transform:rotate(10deg)}}
+.pan{position:absolute;top:-110px;font-size:110px}
+.pan.l{left:20px}.pan.r{right:20px}
+.pivot{position:absolute;left:50%;top:140px;transform:translateX(-50%);border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:150px solid var(--ink)}
+.sign{position:absolute;left:50%;top:-40px;transform:translateX(-50%);width:100px;height:100px;border-radius:50%;display:grid;place-items:center;font-size:60px;font-weight:800;color:#fff}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.sense{text-align:center;padding:30px 22px}
+.sense h3{font-size:40px;color:var(--plum);margin:14px 0 10px;font-weight:800}
+.ad{background:linear-gradient(140deg,#fff3e6,#fde3ec);border-radius:36px;padding:44px 56px;border:2px solid #f2d3dc;box-shadow:0 16px 44px rgba(107,45,92,.13)}
+.chk{display:flex;gap:18px;align-items:center;font-size:38px;font-weight:700;margin:14px 0}
+.chk i{font-style:normal;width:56px;height:56px;border-radius:16px;background:var(--mint);color:#fff;display:grid;place-items:center;font-size:32px}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%}
+.bar{position:absolute;left:0;bottom:0;height:10px;background:linear-gradient(90deg,var(--rose),var(--gold));animation:bar 97s linear 0s both}
+@keyframes bar{from{width:0}to{width:100%}}
+.chap{position:absolute;top:44px;right:60px;font-size:24px;font-weight:800;letter-spacing:3px;color:var(--muted)}
+</style></head><body><div id="stage">
+
+<!-- 1 TITLE 0-6 -->
+<div class="sc" style="--d:0s;--len:6s"><div class="center">
+ <div class="em fi" style="--d:.2s;font-size:150px"><span class="float" style="display:inline-block">🛍️</span></div>
+ <div class="kick fi" style="--d:.5s;margin-top:20px">The Art of Advertising</div>
+ <h1 class="fi" style="--d:.8s;font-size:110px">Grammar in the<br><span class="hl">Beauty Shop</span></h1>
+ <div class="lead fi" style="--d:1.3s">Mega Goal 1 · Unit 4 · Pages 50–51</div>
+</div></div>
+
+<!-- 2 INTRO 6-13 -->
+<div class="sc" style="--d:6s;--len:7s">
+ <div class="kick fi" style="--d:6.2s">Let's start</div>
+ <h2 class="fi" style="--d:6.4s">Adverts use special grammar ✨</h2>
+ <div class="row" style="margin-top:20px;width:100%">
+  <div class="card fi" style="--d:7.2s;flex:1;text-align:center"><div class="em">🏭</div><div class="big hp" style="margin-top:14px">Passive</div><div class="mid" style="color:var(--muted)">is made</div></div>
+  <div class="card fi" style="--d:7.7s;flex:1;text-align:center"><div class="em">📊</div><div class="big hp" style="margin-top:14px">Comparing</div><div class="mid" style="color:var(--muted)">cheaper · the best</div></div>
+  <div class="card fi" style="--d:8.2s;flex:1;text-align:center"><div class="em">⚖️</div><div class="big hp" style="margin-top:14px">as … as</div><div class="mid" style="color:var(--muted)">as shiny as</div></div>
+  <div class="card fi" style="--d:8.7s;flex:1;text-align:center"><div class="em">👃</div><div class="big hp" style="margin-top:14px">Senses + like</div><div class="mid" style="color:var(--muted)">smells like</div></div>
+ </div>
+</div>
+<div class="capw" style="--d:6s;--len:7s"><div class="cap">Four grammar tools that help adverts describe products.</div></div>
+
+<!-- 3 PASSIVE 13-31 -->
+<div class="sc" style="--d:13s;--len:18s">
+ <div class="chap">1 / 4</div>
+ <div class="kick fi" style="--d:13.2s">Grammar 1</div>
+ <h2 class="fi" style="--d:13.4s">The Passive Voice 🏭</h2>
+ <div class="formula fi" style="--d:14s"><span>subject</span><b>+</b><span>be</span><b>+</b><span>past participle</span><b style="font-size:34px">(+ by …)</b></div>
+ <div class="card sl" style="--d:15.5s;margin-top:34px;width:100%">
+  <div class="mid" style="color:var(--muted)">Active: A Saudi company <b>makes</b> this perfume.</div>
+  <div class="big" style="margin-top:10px">Passive: 🧴 This perfume <span class="hl mark" style="--d:17s">is made</span> in Saudi Arabia.</div>
+ </div>
+ <div class="tense" style="margin-top:34px">
+  <div class="t sl" style="--d:22s">Simple past</div><div class="sl" style="--d:22.2s">Chanel No. 5 <b class="hl">was launched</b> in 1921. 🌹</div>
+  <div class="t sl" style="--d:23.6s">Present perfect</div><div class="sl" style="--d:23.8s">Oud <b class="hl">has been used</b> for centuries. 🪵</div>
+  <div class="t sl" style="--d:25.2s">Future</div><div class="sl" style="--d:25.4s">The new bags <b class="hl">will be delivered</b> tomorrow. 👜</div>
+ </div>
+</div>
+<div class="capw" style="--d:13s;--len:9s"><div class="cap">We use the passive to focus on the product – not on who made it.</div></div>
+<div class="capw" style="--d:22s;--len:9s"><div class="cap">Change the verb “be” to change the tense.</div></div>
+
+<!-- 4 COMPARATIVES 31-47 -->
+<div class="sc" style="--d:31s;--len:16s">
+ <div class="chap">2 / 4</div>
+ <div class="kick fi" style="--d:31.2s">Grammar 2</div>
+ <h2 class="fi" style="--d:31.4s">Comparatives &amp; Superlatives 📊</h2>
+ <div class="row" style="width:100%">
+  <div class="card prod pop" style="--d:32.2s"><div class="em">🌹</div><div class="nm">Rose Mist</div><div class="sp">120 SAR · 50 ml</div></div>
+  <div class="card prod pop" style="--d:32.6s"><div class="em">🪵</div><div class="nm">Oud Royal</div><div class="sp">450 SAR · 100 ml · ⭐⭐⭐⭐⭐</div></div>
+  <div class="card prod pop" style="--d:33s"><div class="em">💐</div><div class="nm">Jasmine Joy</div><div class="sp">80 SAR · 30 ml</div></div>
+ </div>
+ <div class="card" style="margin-top:30px;width:100%">
+  <div class="big sl" style="--d:34.5s">Jasmine Joy is <span class="hl mark" style="--d:35.3s">cheaper than</span> Rose Mist.</div>
+  <div class="big sl" style="--d:37.5s;margin-top:8px">Oud Royal is <span class="hl mark" style="--d:38.3s">more expensive than</span> Rose Mist.</div>
+  <div class="big sl" style="--d:40.5s;margin-top:8px">Oud Royal is <span class="hp mark" style="--d:41.3s">the most expensive</span> perfume.</div>
+  <div class="big sl" style="--d:43.5s;margin-top:8px">It has <span class="hp mark" style="--d:44.3s">the best</span> rating. <span style="color:var(--muted);font-size:32px">(good → better → the best)</span></div>
+ </div>
+</div>
+<div class="capw" style="--d:31s;--len:9s"><div class="cap">Two things → comparative: cheaper than · more expensive than</div></div>
+<div class="capw" style="--d:40s;--len:7s"><div class="cap">Three or more → superlative: the cheapest · the most expensive</div></div>
+
+<!-- 5 AS AS 47-63 -->
+<div class="sc" style="--d:47s;--len:16s">
+ <div class="chap">3 / 4</div>
+ <div class="kick fi" style="--d:47.2s">Grammar 3</div>
+ <h2 class="fi" style="--d:47.4s">as … as &nbsp;/&nbsp; not as … as ⚖️</h2>
+ <div style="position:relative;height:330px;margin-top:90px;width:100%">
+  <div class="sc" style="--d:48s;--len:7.5s;padding:0"><div class="scale">
+   <div class="sign" style="background:var(--plum2)">=</div>
+   <div class="beam"><div class="pan l">💍</div><div class="pan r">💎</div></div><div class="pivot"></div></div></div>
+  <div class="sc" style="--d:55.5s;--len:7.5s;padding:0"><div class="scale">
+   <div class="sign" style="background:var(--orange)">≠</div>
+   <div class="beam t" style="--d:56.2s"><div class="pan l" style="font-size:80px;top:-80px">👛</div><div class="pan r" style="font-size:140px;top:-140px">👜</div></div><div class="pivot"></div></div></div>
+ </div>
+ <div style="position:relative;height:130px;width:100%">
+  <div class="sc" style="--d:48.5s;--len:7s;padding:0"><div class="card big" style="text-align:center;width:100%">💍 This ring is <span class="hp mark" style="--d:49.6s">as shiny as</span> a diamond.</div></div>
+  <div class="sc" style="--d:56s;--len:7s;padding:0"><div class="card big" style="text-align:center;width:100%">👛 My bag is <span class="ho mark" style="--d:57.2s">not as big as</span> my sister's bag.</div></div>
+ </div>
+</div>
+<div class="capw" style="--d:47s;--len:8.5s"><div class="cap">as + adjective + as → the two things are the SAME.</div></div>
+<div class="capw" style="--d:55.5s;--len:7.5s"><div class="cap">not as + adjective + as → the two things are DIFFERENT.</div></div>
+
+<!-- 6 SENSES 63-78 -->
+<div class="sc" style="--d:63s;--len:15s">
+ <div class="chap">4 / 4</div>
+ <div class="kick fi" style="--d:63.2s">Grammar 4</div>
+ <h2 class="fi" style="--d:63.4s">look · smell · sound · taste + like 👃</h2>
+ <div class="grid4" style="margin-top:20px;width:100%">
+  <div class="card sense pop" style="--d:64.5s"><div class="em">👀</div><h3>look like</h3><div class="mid">That bag <b class="hl">looks like</b> a designer bag.</div></div>
+  <div class="card sense pop" style="--d:67s"><div class="em">👃</div><h3>smell like</h3><div class="mid">This perfume <b class="hl">smells like</b> roses.</div></div>
+  <div class="card sense pop" style="--d:69.5s"><div class="em">👂</div><h3>sound like</h3><div class="mid">Your plan <b class="hl">sounds like</b> fun!</div></div>
+  <div class="card sense pop" style="--d:72s"><div class="em">👅</div><h3>taste like</h3><div class="mid">This lip balm <b class="hl">tastes like</b> strawberries.</div></div>
+ </div>
+</div>
+<div class="capw" style="--d:63s;--len:15s"><div class="cap">Sense verb + like + noun → one thing is similar to another.</div></div>
+
+<!-- 7 ADVERT 78-89 -->
+<div class="sc" style="--d:78s;--len:11s">
+ <div class="kick fi" style="--d:78.2s">All together</div>
+ <h2 class="fi" style="--d:78.4s">Read the advert 📣</h2>
+ <div class="ad pop" style="--d:79s;width:100%">
+  <div style="font-size:52px;font-weight:800;color:var(--plum)">🌹 ROSE OUD</div>
+  <div class="big" style="margin-top:16px;font-weight:600">This perfume <span class="hl mark" style="--d:80.5s">is made</span> in Taif from real roses.
+  It <span class="hl mark" style="--d:82s">smells like</span> a garden after rain. It is <span class="hl mark" style="--d:83.5s">lighter than</span> oud,
+  but it lasts <span class="hl mark" style="--d:85s">as long as</span> a strong perfume. The <span class="hl mark" style="--d:86.5s">best</span> gift for your mother!</div>
+ </div>
+</div>
+<div class="capw" style="--d:78s;--len:11s"><div class="cap">Can you find all four grammar points in this advert?</div></div>
+
+<!-- 8 RECAP 89-97 -->
+<div class="sc" style="--d:89s;--len:8s"><div class="center">
+ <div class="kick fi" style="--d:89.2s">Remember</div>
+ <div style="text-align:left;margin-top:26px">
+  <div class="chk sl" style="--d:89.6s"><i>✓</i>Passive: <span class="hl">is made · was launched · will be sold</span></div>
+  <div class="chk sl" style="--d:90.2s"><i>✓</i>Compare: <span class="hl">cheaper than · the most expensive</span></div>
+  <div class="chk sl" style="--d:90.8s"><i>✓</i>Same / different: <span class="hl">as … as · not as … as</span></div>
+  <div class="chk sl" style="--d:91.4s"><i>✓</i>Similar: <span class="hl">looks · smells · sounds · tastes + like</span></div>
+ </div>
+ <h1 class="pop" style="--d:92.6s;margin-top:40px">Now it's your turn! 💖</h1>
+</div></div>
+
+<div class="bar"></div>
+<script>
+window.seek=t=>{document.getAnimations().forEach(a=>{a.pause();a.currentTime=t*1000})};
+</script>
+</div>
+<div id="big" aria-label="Play">▶</div>
+<div id="ctl"><button id="pp" aria-label="Play">▶</button><input id="rng" type="range" min="0" max="97" step="0.1" value="0"><span id="tm">0:00 / 1:37</span><button id="snd" aria-label="Sound">🔊</button><button id="fs" aria-label="Full screen">⛶</button></div>
+<style>
+#big{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:rgba(224,80,127,.95);color:#fff;font-size:34px;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.3);padding-left:6px;z-index:5}
+#ctl{position:fixed;left:0;right:0;bottom:0;display:flex;gap:8px;align-items:center;padding:8px 10px;background:linear-gradient(transparent,rgba(30,10,26,.75));z-index:6;opacity:1;transition:opacity .3s}
+#ctl.hid{opacity:0}
+#ctl button{background:rgba(255,255,255,.18);border:0;color:#fff;width:38px;height:34px;border-radius:10px;font-size:16px;cursor:pointer}
+#rng{flex:1;accent-color:#e0507f}
+#tm{color:#fff;font:600 12px Inter,system-ui,sans-serif;white-space:nowrap}
+</style>
+<script>
+(()=>{const DUR=97,stage=document.getElementById('stage'),big=document.getElementById('big'),pp=document.getElementById('pp'),rng=document.getElementById('rng'),tm=document.getElementById('tm'),ctl=document.getElementById('ctl');
+let t=0,playing=false,last=0,ac=null,buf=null,src=null,gain=null,muted=false,hideT;
+const fit=()=>{const k=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`translate(-50%,-50%) scale(${k})`};addEventListener('resize',fit);fit();
+const fmt=x=>`${Math.floor(x/60)}:${String(Math.floor(x%60)).padStart(2,'0')}`;
+function show(){rng.value=t;tm.textContent=`${fmt(t)} / ${fmt(DUR)}`;seek(t)}
+function music(SR){const N=SR*DUR,L=new Float32Array(N),mid=m=>440*Math.pow(2,(m-69)/12),beat=60/96,bar=beat*4,TAU=2*Math.PI;
+ const add=(st,fn,len)=>{const i0=Math.floor(st*SR),n=Math.min(Math.floor(len*SR),N-i0);for(let i=0;i<n;i++)L[i0+i]+=fn(i/SR)};
+ const ch=[[60,64,67],[55,59,62],[57,60,64],[53,57,60]],bs=[36,43,45,41];let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647*2-1};
+ for(let b=0;b*bar<DUR;b++){const c=ch[b%4],s=b*bar,f=c.map(mid);
+  add(s,x=>{const e=Math.min(1,x/.6)*Math.min(1,(bar-x)/.4);let v=0;for(const q of f)v+=Math.sin(TAU*q*x)+.5*Math.sin(TAU*q*1.003*x)+.2*Math.sin(2*TAU*q*x);return .028*v*e},bar);
+  for(let k=0;k<2;k++){const q=mid(bs[b%4]);add(s+k*2*beat,x=>.1*Math.sin(TAU*q*x)*Math.exp(-x*2.2),beat*2)}
+  const arp=[c[0]+12,c[1]+12,c[2]+12,c[1]+12,c[0]+24,c[2]+12,c[1]+12,c[2]+12];
+  arp.forEach((m,k)=>{const q=mid(m);add(s+k*beat/2,x=>.05*(Math.sin(TAU*q*x)+.3*Math.sin(2*TAU*q*x))*Math.exp(-x*7)*Math.min(1,x/.004),beat*.8)});
+  for(let k=0;k<8;k++)add(s+k*beat/2,x=>.012*rnd()*Math.exp(-x*90),.05);
+  for(const k of[0,2]){let ph=0;add(s+k*beat,x=>{ph+=TAU*(50+90*Math.exp(-x*30))/SR;return .16*Math.sin(ph)*Math.exp(-x*12)},.25)}}
+ for(const c of[6,13,31,47,63,78,89])add(c,x=>{let v=0;for(const m of[84,88,91])v+=Math.sin(TAU*mid(m)*x)*Math.exp(-x*4);return .06*v},1.2);
+ const R=new Float32Array(N),d=Math.floor(beat*.75*SR),h=d>>1,Lo=new Float32Array(N);let mx=0;
+ for(let i=0;i<N;i++){const fd=Math.min(1,i/SR,(N-i)/SR/3);Lo[i]=(L[i]+(i>=h?.18*L[i-h]:0))*fd;R[i]=(L[i]+(i>=d?.25*L[i-d]:0))*fd;mx=Math.max(mx,Math.abs(Lo[i]),Math.abs(R[i]))}
+ const g=.7/mx;for(let i=0;i<N;i++){Lo[i]*=g;R[i]*=g}return[Lo,R]}
+function audio(){try{if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();gain=ac.createGain();gain.connect(ac.destination);const SR=22050;const [l,r]=music(SR);buf=ac.createBuffer(2,l.length,SR);buf.getChannelData(0).set(l);buf.getChannelData(1).set(r)}
+ ac.resume();stopA();src=ac.createBufferSource();src.buffer=buf;src.connect(gain);gain.gain.value=muted?0:1;src.start(0,Math.min(t,DUR-.05))}catch(e){}}
+function stopA(){try{src&&src.stop()}catch(e){}src=null}
+function loop(){if(!playing)return;const n=performance.now();t+=(n-last)/1000;last=n;if(t>=DUR){t=DUR;pause()}show();requestAnimationFrame(loop)}
+function play(){if(t>=DUR-.1)t=0;playing=true;last=performance.now();big.style.display='none';pp.textContent='❚❚';audio();loop();poke()}
+function pause(){playing=false;stopA();pp.textContent='▶';big.style.display='grid';big.textContent=t>=DUR?'↺':'▶';ctl.classList.remove('hid')}
+function poke(){ctl.classList.remove('hid');clearTimeout(hideT);hideT=setTimeout(()=>playing&&ctl.classList.add('hid'),2500)}
+big.onclick=play;pp.onclick=()=>playing?pause():play();stage.onclick=()=>playing?pause():play();
+rng.oninput=()=>{t=+rng.value;show();if(playing){last=performance.now();audio()}};
+document.getElementById('snd').onclick=e=>{muted=!muted;e.target.textContent=muted?'🔇':'🔊';if(gain)gain.gain.value=muted?0:1};
+document.getElementById('fs').onclick=()=>{const d=document.documentElement;try{document.fullscreenElement?document.exitFullscreen():(d.requestFullscreen||d.webkitRequestFullscreen).call(d)}catch(e){}};
+addEventListener('message',e=>{if(e.data==='pause'&&playing)pause()});addEventListener('mousemove',poke);addEventListener('touchstart',poke,{passive:true});
+document.fonts&&document.fonts.ready.then(show);t=2.5;show();})();
+</script>
+</body></html>
