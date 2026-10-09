@@ -306,10 +306,10 @@ const add=(name,html,init,game)=>S.push({name,html,init,game:game||/^(Game|Memor
 add('Welcome',`<div class="cover"><div class="wrap">
 <div><span class="kicker">✨ Grammar lesson</span>
 <h1 class="title" style="font-size:clamp(34px,6.4vw,66px)">The Art of<br><span class="hl">Advertising</span></h1>
-<p class="sub">Passive voice · Comparatives &amp; superlatives · as … as · look / smell / sound / taste + like</p>
+<p class="sub">Passive voice · Comparatives &amp; superlatives · as … as · look / smell / sound / taste + like<br><b style="color:var(--sa)">🤲 With Islamic and Saudi values</b></p>
 <div class="meta"><span>📘 Mega Goal 1 – First Secondary</span><span>📍 Unit 4</span><span>📄 Pages 50–51</span><span style="background:var(--sa2);border-color:#bcdcc8;color:var(--sa)">🇸🇦 Proudly Saudi</span></div>
 <button class="cta" onclick="go(1)">Start the lesson ›</button></div>
-<div class="pic"><img src="img/presenter.avif" alt="A teacher holding a perfume bottle next to a board" width="720" height="405"><div class="board" style="left:5%;top:3.5%;width:53.5%;height:52%"><div class="k">Grammar lesson</div><div class="t">The Art of <b>Advertising</b></div><div class="s">Mega Goal 1 · Unit 4</div></div></div>
+<div class="pic"><img src="img/presenter.avif" alt="A teacher holding a bottle of Taif rose oil next to a board" width="720" height="405"><div class="board" style="left:5%;top:3.5%;width:53.5%;height:52%"><div class="k">Grammar lesson</div><div class="t">The Art of <b>Advertising</b></div><div class="s">Mega Goal 1 · Unit 4</div></div></div>
 </div></div>`);
 
 add('Teams & rules',`<div class="wrap"><span class="kicker">👭 Get ready</span><h2 class="title">Choose your teams</h2>
@@ -347,14 +347,15 @@ add('Lesson objectives',`<div class="wrap"><span class="kicker">🎯 Objectives<
 <div class="card"><div class="emoji">🏭</div><h3>1 · Passive voice</h3><p class="mid" style="margin:0">Form and use the passive in different tenses.</p></div>
 <div class="card"><div class="emoji">⚖️</div><h3>2 · Comparing</h3><p class="mid" style="margin:0">Use comparatives, superlatives and <b class="hl">as … as</b>, plus <b class="hl">look, smell, sound, taste + like + noun</b>.</p></div>
 <div class="card"><div class="emoji">🔄</div><h3>3 · Apply</h3><p class="mid" style="margin:0">Tell active from passive and use comparative structures correctly.</p></div>
+<div class="card sa-card"><div class="emoji">🤲</div><h3>4 · Values</h3><p class="mid" style="margin:0">Show <b>Islamic values</b> (honesty, fair trade, charity, cooperation) and <b>love of our homeland</b> 🇸🇦.</p></div>
 </div></div>`);
 
-add('Video',`<div class="wrap"><span class="kicker">🎬 Video 1 · Watch &amp; think</span><h2 class="title">Grammar in the Beauty Shop</h2>
-<div class="card" style="margin-bottom:14px;background:var(--lav);border-color:#e2d4f5"><span class="tag">❓ Before you watch</span><p class="mid" style="margin:6px 0 0">The video is called <b>“Grammar in the Beauty Shop”</b>. What do adverts tell us about a product? <b class="hp">Guess two grammar points you will see.</b></p></div>
+add('Video',`<div class="wrap"><span class="kicker">🎬 Video 1 · Watch &amp; think</span><h2 class="title">Grammar at the Charity Fair</h2>
+<div class="card" style="margin-bottom:14px;background:var(--lav);border-color:#e2d4f5"><span class="tag">❓ Before you watch</span><p class="mid" style="margin:6px 0 0">The video is called <b>“Grammar at the Charity Fair”</b>. What do adverts tell us about a product? <b class="hp">Guess two grammar points you will see.</b></p></div>
 <div class="vbox"><iframe id="vid" src="video.html" title="Grammar video" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
 <div class="row" style="justify-content:center;margin-top:10px"><a class="btn ghost" href="video.html" target="_blank" rel="noopener" style="text-decoration:none">⛶ Open the video full screen</a></div>
 <div class="card" style="margin-top:14px;background:var(--mintbg);border-color:#bfe8dd"><span class="tag">✍️ After you watch · Pairs · 2 minutes</span><p class="mid" style="margin:6px 0 0">Write <b>one sentence from the video</b> for each grammar point: <b class="hl">passive</b> · <b class="hl">comparative</b> · <b class="hl">as … as</b> · <b class="hl">sense + like</b>.</p><div class="row" style="margin-top:10px"><button class="btn gold" onclick="startTimer(120)">⏱️ Start 2 minutes</button></div></div>
-<div class="card reveal" style="margin-top:14px"><b class="hp">Why do we use the passive voice?</b> <span class="hint">Tap to see the answer</span><div class="ans mid">We use the passive to focus on <b class="hl">the action or the result</b> (what was done) instead of <b>who</b> did it. <br>e.g. <i>This perfume <b class="hl">is made</b> in Saudi Arabia.</i></div></div>
+<div class="card reveal" style="margin-top:14px"><b class="hp">Why do we use the passive voice?</b> <span class="hint">Tap to see the answer</span><div class="ans mid">We use the passive to focus on <b class="hl">the action or the result</b> (what was done) instead of <b>who</b> did it. <br>e.g. <i>This rose oil <b class="hl">is made</b> in Saudi Arabia.</i></div></div>
 </div>`,null);
 
 add('Video: Active & Passive',`<div class="wrap"><span class="kicker">🎬 Video 2 · At the charity fair</span><h2 class="title">Change the focus</h2>
@@ -364,41 +365,41 @@ add('Video: Active & Passive',`<div class="wrap"><span class="kicker">🎬 Video
 <div class="grid g2">
 <div class="card reveal"><p class="mid" style="margin:0">Reem checked the boxes.</p><span class="hint">Tap for the answer</span><p class="mid ans" style="margin:6px 0 0">The boxes <b class="hl">were checked</b> by Reem.</p></div>
 <div class="card reveal"><p class="mid" style="margin:0">The volunteers wrap the gifts.</p><span class="hint">Tap for the answer</span><p class="mid ans" style="margin:6px 0 0">The gifts <b class="hl">are wrapped</b> by the volunteers.</p></div>
-<div class="card reveal"><p class="mid" style="margin:0">The girls sold the perfumes at the fair.</p><span class="hint">Tap for the answer</span><p class="mid ans" style="margin:6px 0 0">The perfumes <b class="hl">were sold</b> at the fair.</p></div>
+<div class="card reveal"><p class="mid" style="margin:0">The girls sold the dates at the fair.</p><span class="hint">Tap for the answer</span><p class="mid ans" style="margin:6px 0 0">The dates <b class="hl">were sold</b> at the fair.</p></div>
 <div class="card reveal"><p class="mid" style="margin:0">The school will give the money to charity.</p><span class="hint">Tap for the answer</span><p class="mid ans" style="margin:6px 0 0">The money <b class="hl">will be given</b> to charity. 💚</p></div>
 </div></div></div>`,()=>$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open')));
 
 add('The passive voice',`<div class="wrap"><span class="kicker">🏭 Grammar 1</span><h2 class="title">The Passive Voice</h2>
 <p class="sub">We use the passive to focus on <b class="hl">what was done</b>, not <b>who</b> did it.</p>
-<div class="pic" style="margin-bottom:14px"><img src="img/factory.avif" alt="Perfume bottles on a factory line" width="720" height="405" loading="lazy"><div class="board" style="left:3.6%;top:6%;width:47.5%;height:30.5%"><div class="k">Passive voice</div><div class="t" style="font-size:4.2cqw">This perfume <b>is made</b> in Saudi Arabia.</div><div class="s">The bottles <b style="color:var(--rose)">are filled</b> and <b style="color:var(--rose)">packed</b> here.</div></div></div>
+<div class="pic" style="margin-bottom:14px"><img src="img/factory.avif" alt="Bottles of rose oil on a factory line" width="720" height="405" loading="lazy"><div class="board" style="left:3.6%;top:6%;width:47.5%;height:30.5%"><div class="k">Passive voice</div><div class="t" style="font-size:4.2cqw">This rose oil <b>is made</b> in Saudi Arabia.</div><div class="s">The bottles <b style="color:var(--rose)">are filled</b> and <b style="color:var(--rose)">packed</b> here.</div></div></div>
 <div class="card"><div class="formula"><span>subject</span><b>+</b><span>be</span><b>+</b><span>past participle</span><b>(+ by …)</b></div></div>
 <div class="tense" style="margin-top:14px">
-<div>Simple present</div><div class="mid">This perfume <b class="hl">is made</b> in Saudi Arabia. 🧴</div>
-<div>Simple past</div><div class="mid">Chanel No. 5 <b class="hl">was launched</b> in 1921. 🌹</div>
-<div>Present perfect</div><div class="mid">Oud <b class="hl">has been used</b> in perfumes for centuries. 🪵</div>
-<div>Future</div><div class="mid">The new handbags <b class="hl">will be delivered</b> tomorrow. 👜</div>
-<div>by + agent</div><div class="mid">This necklace <b class="hl">was designed by</b> a young Saudi designer. 💎</div>
+<div>Simple present</div><div class="mid">Taif rose oil <b class="hl">is made</b> in Saudi Arabia. 🌹</div>
+<div>Simple past</div><div class="mid">The King Fahd Qur’an Printing Complex <b class="hl">was opened</b> in 1984. 📖</div>
+<div>Present perfect</div><div class="mid">The Two Holy Mosques <b class="hl">have been expanded</b> many times. 🕋</div>
+<div>Future</div><div class="mid">The charity boxes <b class="hl">will be delivered</b> tomorrow. 📦</div>
+<div>by + agent</div><div class="mid">This Sadu bag <b class="hl">was woven by</b> a Saudi grandmother. 🧶</div>
 </div>
 <div class="grid g2" style="margin-top:14px">
-<div class="card reveal"><h3>🔄 Active → Passive</h3><p class="mid" style="margin:0">A Saudi company <b>produces</b> this lipstick.</p><span class="hint">Tap to change it</span><p class="mid ans" style="margin:6px 0 0">This lipstick <b class="hl">is produced by</b> a Saudi company. 💄</p></div>
+<div class="card reveal"><h3>🔄 Active → Passive</h3><p class="mid" style="margin:0">A Saudi company <b>produces</b> this rose oil.</p><span class="hint">Tap to change it</span><p class="mid ans" style="margin:6px 0 0">This rose oil <b class="hl">is produced by</b> a Saudi company. 🌹</p></div>
 <div class="note mid">💡 The <b>by + agent</b> is optional. We only use it when <b>who</b> did it is important.</div>
 </div></div>`,()=>$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open')));
 
 add('Game: Passive builder',`<div class="wrap"><span class="kicker">🧩 Game 1 · Passive builder</span><h2 class="title">Build the sentence</h2>
 <p class="sub">Tap the words in the right order. Tap a word in the box to send it back.</p><div id="bld"></div></div>`,()=>builder($('#bld'),[
-  ['The perfume','is','made','in','France.'],
-  ['The handbag','was','designed','by','a famous designer.'],
-  ['The new earrings','will','be','sold','online.'],
-  ['Oud','has','been','used','in perfumes','for centuries.'],
+  ['The rose oil','is','made','in','Taif.'],
+  ['The handbag','was','designed','by','a Saudi designer.'],
+  ['The charity boxes','will','be','delivered','tomorrow.'],
+  ['The Holy Qur’an','is','printed','in','Madinah.'],
   ['These scarves','are','made','by hand.']
 ]));
 
 add('Game: Active → Passive',`<div class="wrap"><span class="kicker">🔄 Game 2 · Active → Passive</span><h2 class="title">Choose the passive sentence</h2><div id="ap"></div></div>`,()=>mcq($('#ap'),[
   {pre:'Designers make these bags in Italy.',q:'These bags ___ in Italy.',o:['are made','were made','make'],why:'simple present → are + made'},
-  {pre:'A Saudi company produced this perfume.',q:'This perfume ___ by a Saudi company.',o:['was produced','is produced','produced'],why:'simple past → was + produced'},
+  {pre:'A Saudi company produced this rose oil.',q:'This rose oil ___ by a Saudi company.',o:['was produced','is produced','produced'],why:'simple past → was + produced'},
   {pre:'People have worn bracelets for thousands of years.',q:'Bracelets ___ for thousands of years.',o:['have been worn','has been worn','were wear'],why:'present perfect → have been + worn'},
   {pre:'The shop will wrap your gift.',q:'Your gift ___ by the shop.',o:['will be wrapped','will wrapped','is wrapping'],why:'future → will be + wrapped'},
-  {pre:'They sell these lipsticks online.',q:'These lipsticks ___ online.',o:['are sold','is sold','are sell'],why:'plural subject → are'}
+  {pre:'They sell these prayer mats online.',q:'These prayer mats ___ online.',o:['are sold','is sold','are sell'],why:'plural subject → are'}
 ],{title:'Passive'}));
 
 add('Comparatives & superlatives',`<div class="wrap"><span class="kicker">📊 Grammar 2</span><h2 class="title">Comparatives &amp; Superlatives</h2>
@@ -410,16 +411,16 @@ add('Comparatives & superlatives',`<div class="wrap"><span class="kicker">📊 G
 </div>
 <div class="grid g3" style="margin-top:14px" id="perf"></div>
 <div class="card reveal" style="margin-top:14px"><span class="hint">Tap for example sentences</span><div class="ans mid">
-• Oud Royal is <b class="hl">more expensive than</b> Rose Mist.<br>• Oud Royal is <b class="hp">the most expensive</b> perfume of the three.<br>• Rose Mist has a <b class="hl">smaller</b> bottle <b class="hl">than</b> Oud Royal.<br>• Oud Royal has <b class="hp">the best</b> rating.</div></div>
+• Ajwa dates are <b class="hl">more expensive than</b> Sukkari dates.<br>• Ajwa dates are <b class="hp">the most expensive</b> of the three.<br>• The Sukkari box is <b class="hl">smaller than</b> the Ajwa box.<br>• Ajwa has <b class="hp">the best</b> rating.</div></div>
 </div>`,()=>{$('#perf').innerHTML=PERF.map(p=>prodCard(p)).join('');$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open'))});
 
-add('Game: Perfume shop',`<div class="wrap"><span class="kicker">🛍️ Game 3 · Perfume shop</span><h2 class="title">Compare the perfumes</h2>
+add('Game: Dates market',`<div class="wrap"><span class="kicker">🌴 Game 3 · Dates market</span><h2 class="title">Compare the dates</h2>
 <div class="grid g3" id="perf2" style="margin-bottom:14px"></div><div id="cmp"></div></div>`,()=>{$('#perf2').innerHTML=PERF.map(p=>prodCard(p,true)).join('');mcq($('#cmp'),[
-  {q:'Oud Royal is ___ Rose Mist.',o:['more expensive than','expensiver than','the most expensive']},
-  {q:'Oud Royal is ___ perfume in the shop.',o:['the most expensive','more expensive','the expensivest']},
-  {q:'Rose Mist has a ___ bottle than Oud Royal.',o:['smaller','more small','smallest']},
-  {q:'Oud Royal has ___ rating of the three.',o:['the best','the better','the goodest']},
-  {q:'Vanilla Dream is ___ Rose Mist. (same price!)',o:['as cheap as','cheaper than','the cheapest'],why:'Same price → as … as'}
+  {q:'Ajwa dates are ___ Sukkari dates.',o:['more expensive than','expensiver than','the most expensive']},
+  {q:'Ajwa dates are ___ dates in the market.',o:['the most expensive','more expensive','the expensivest']},
+  {q:'The Sukkari box is ___ than the Ajwa box.',o:['smaller','more small','smallest']},
+  {q:'Ajwa has ___ rating of the three.',o:['the best','the better','the goodest']},
+  {q:'Khalas dates are ___ Sukkari dates. (same price!)',o:['as cheap as','cheaper than','the cheapest'],why:'Same price → as … as'}
 ],{title:'Compare'})});
 
 add('Video: Equal or not?',`<div class="wrap"><span class="kicker">🎬 Video 3 · Equal or not?</span><h2 class="title">Same or different?</h2>
@@ -437,6 +438,7 @@ add('as … as / not as … as',`<div class="wrap"><span class="kicker">⚖️ G
 <div class="pic"><img src="img/bags.avif" alt="Two bags on scales, both 1 kg" width="720" height="405" loading="lazy"><div class="cap">👜 The yellow bag is <b style="color:#f3d68c">as heavy as</b> the blue bag. (1 kg = 1 kg)</div></div>
 <div class="pic"><img src="img/gifts.avif" alt="Two gifts, 30 SAR and 50 SAR" width="720" height="405" loading="lazy"><div class="cap">🎁 The green gift is <b style="color:#f3d68c">not as expensive as</b> the blue gift.</div></div>
 </div>
+<div class="card value" style="margin-top:14px;text-align:center"><p class="ar" style="margin:0">﴿وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ﴾</p><p class="mid" style="margin:4px 0 0">“…and weigh with an even balance.” <span style="color:var(--muted);font-size:14px">(Al-Isra 17:35)</span><br>A Muslim seller is fair: <b class="hp">1 kg of dates must be as heavy as 1 kg on the scale.</b> ⚖️</p></div>
 <div class="card" style="margin-top:14px"><div class="tag" style="text-align:center">Tap two items to compare them</div>
 <div class="scale"><div class="sign" id="sign">?</div><div class="beam" id="beam"><div class="pan l" id="panL">❔</div><div class="pan r" id="panR">❔</div></div><div class="pivot"></div></div>
 <div class="q" id="scaleTxt" style="text-align:center;min-height:44px;margin-bottom:10px">Choose a pair below 👇</div>
@@ -445,7 +447,7 @@ add('as … as / not as … as',`<div class="wrap"><span class="kicker">⚖️ G
 add('Game: Equal or not?',`<div class="wrap"><span class="kicker">🟰 Game 4 · Equal or not?</span><h2 class="title">Choose the correct sentence</h2><div id="eq"></div></div>`,()=>mcq($('#eq'),[
   {pre:'💍 Silver ring: 150 SAR · 💍 Gold-tone ring: 150 SAR',q:'The silver ring is ___ the gold-tone ring.',o:['as expensive as','not as expensive as','more expensive as']},
   {pre:'👠 High heels: 😣 · 👟 Sneakers: 😊 comfortable',q:'High heels are ___ sneakers.',o:['not as comfortable as','as comfortable as','not as comfortable than']},
-  {pre:'🧴 Body mist: light 🌬️ · 🪵 Oud perfume: very strong 💪',q:'The body mist is ___ the oud perfume.',o:['not as strong as','as strong as','stronger as']},
+  {pre:'🌹 Taif rose oil: light 🌬️ · 🪵 Oud oil: very strong 💪',q:'Rose oil is ___ oud oil.',o:['not as strong as','as strong as','stronger as']},
   {pre:'👛 Mini bag: 18 cm · 👜 Tote bag: 40 cm',q:'The mini bag is ___ the tote bag.',o:['not as big as','as big as','as bigger as']},
   {pre:'🧣 Silk scarf: soft · 🧣 Satin scarf: soft',q:'The silk scarf is ___ the satin scarf.',o:['as soft as','not as soft as','as softer as']}
 ],{title:'as … as'}));
@@ -455,25 +457,25 @@ add('look · smell · sound · taste + like',`<div class="wrap"><span class="kic
 <div class="pic qimg" style="max-width:760px;margin-bottom:14px"><img src="img/rose.avif" alt="Two girls with a pink rose" width="720" height="405" loading="lazy"><div class="cap">🌹 It <b style="color:#f3d68c">looks like</b> a rose and it <b style="color:#f3d68c">smells like</b> a rose!</div></div>
 <div class="grid g4">
 <div class="card sense"><div class="emoji">👀</div><h3>look like</h3><p class="mid" style="margin:0">That bag <b class="hl">looks like</b> a designer bag.</p></div>
-<div class="card sense"><div class="emoji">👃</div><h3>smell like</h3><p class="mid" style="margin:0">This perfume <b class="hl">smells like</b> roses.</p></div>
+<div class="card sense"><div class="emoji">👃</div><h3>smell like</h3><p class="mid" style="margin:0">Saudi coffee <b class="hl">smells like</b> cardamom.</p></div>
 <div class="card sense"><div class="emoji">👂</div><h3>sound like</h3><p class="mid" style="margin:0">Your plan <b class="hl">sounds like</b> a great idea.</p></div>
-<div class="card sense"><div class="emoji">👅</div><h3>taste like</h3><p class="mid" style="margin:0">This lip balm <b class="hl">tastes like</b> strawberries.</p></div>
+<div class="card sense"><div class="emoji">👅</div><h3>taste like</h3><p class="mid" style="margin:0">Sukkari dates <b class="hl">taste like</b> caramel.</p></div>
 </div>
-<div class="note mid" style="margin-top:14px">💡 Adverts love this pattern: <i>“Our new candle <b>smells like</b> a spring garden!”</i></div></div>`);
+<div class="note mid" style="margin-top:14px">💡 Adverts love this pattern: <i>“Our Taif rose oil <b>smells like</b> a spring garden!”</i></div></div>`);
 
 add('Game: Which sense?',`<div class="wrap"><span class="kicker">🌸 Game 5 · Which sense?</span><h2 class="title">Complete the sentence</h2><div id="sn"></div></div>`,()=>mcq($('#sn'),[
-  {q:'I love this new fragrance. It ___ like roses. 🌹',o:['smells','sounds']},
-  {q:'You ___ like a model in that abaya! ✨',o:['look','taste']},
-  {q:'This lip balm ___ like strawberries. 🍓',o:['tastes','looks']},
-  {q:'Your plan for the party ___ like fun! 🎉',o:['sounds','smells']},
+  {q:'I love this rose oil. It ___ like real roses. 🌹',o:['smells','sounds']},
+  {q:'The old mud houses in Diriyah ___ like castles. 🏰',o:['look','taste']},
+  {q:'Sukkari dates ___ like caramel. 🌴',o:['taste','look']},
+  {q:'Your plan for the charity fair ___ like a great idea! 🤝',o:['sounds','smells']},
   {q:'This copy ___ just like a real designer bag. 👜',o:['looks','sounds']},
   {q:'My new ringtone ___ like a little bird. 🐦',o:['sounds','tastes']},
-  {q:'This candle ___ like vanilla and oud. 🕯️',o:['smells','looks']}
+  {q:'This bakhoor ___ like oud and roses.',o:['smells','looks']}
 ],{title:'Senses'}));
 
 add('Game: Picture quiz',`<div class="wrap"><span class="kicker">🖼️ Game 6 · Look &amp; choose</span><h2 class="title">Picture quiz</h2><p class="sub">Look at the picture and choose the correct words.</p><div id="pq"></div></div>`,()=>mcq($('#pq'),[
-  {img:'factory',q:'Look! These perfumes ___ in a factory.',o:['are made','make','is made'],why:'passive · plural → are made'},
-  {img:'presenter',q:'This perfume bottle ___ by a Saudi designer.',o:['was designed','designed','was design']},
+  {img:'factory',q:'Look! These bottles of rose oil ___ in a Saudi factory.',o:['are made','make','is made'],why:'passive · plural → are made'},
+  {img:'presenter',q:'This bottle of Taif rose oil ___ in Saudi Arabia.',o:['is made','makes','are made']},
   {img:'bags',q:'The yellow bag is ___ the blue bag.',o:['as heavy as','heavier than','not as heavy as'],why:'1 kg = 1 kg'},
   {img:'gifts',q:'The green gift is ___ the blue gift.',o:['not as expensive as','as expensive as','more expensive than'],why:'30 SAR ≠ 50 SAR'},
   {img:'gifts',q:'The blue gift is ___ the green gift.',o:['more expensive than','cheaper than','as cheap as']},
@@ -509,9 +511,21 @@ add('Our values',`<div class="wrap"><span class="kicker">💚 Values · Advertis
 </div>
 <div class="note mid" style="margin-top:14px">💬 <b>Think – Pair – Share:</b> Have you ever seen an advert that was <b>not</b> honest? How did the buyer feel?</div></div>`);
 
+add('Islam & fair trade',`<div class="wrap"><span class="kicker sa-kick">🕌 Islamic values in buying and selling</span><h2 class="title" style="color:var(--sa)">Islam teaches us to trade fairly</h2>
+<div class="grid g2">
+<div class="card value"><div class="emoji">⚖️</div><h3>Fair weighing</h3><p class="ar" style="margin:4px 0">﴿وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ﴾</p><p class="mid" style="margin:0">“Give full measure when you measure, and weigh with an even balance.” <span style="color:var(--muted);font-size:14px">(Al-Isra 17:35)</span><br>👉 Fair scales <b class="hl">are used</b> in our markets.</p></div>
+<div class="card value"><div class="emoji">🤝</div><h3>The honest merchant</h3><p class="ar" style="margin:4px 0">«التاجرُ الصَّدوقُ الأمينُ مع النبيِّين والصِّدِّيقين والشُّهداء»</p><p class="mid" style="margin:0">“The truthful, trustworthy merchant is with the prophets, the truthful and the martyrs.” <span style="color:var(--muted);font-size:14px">(At-Tirmidhi)</span><br>👉 Honest sellers <b class="hl">are trusted</b> by everyone.</p></div>
+<div class="card value"><div class="emoji">💚</div><h3>Charity</h3><p class="ar" style="margin:4px 0">«ما نقصت صدقةٌ من مال»</p><p class="mid" style="margin:0">“Charity does not decrease wealth.” <span style="color:var(--muted);font-size:14px">(Sahih Muslim)</span><br>👉 The money from our fair <b class="hl">will be given</b> to people in need.</p></div>
+<div class="card value"><div class="emoji">😊</div><h3>Kindness to customers</h3><p class="ar" style="margin:4px 0">«تبسُّمُك في وجهِ أخيك لك صدقة»</p><p class="mid" style="margin:0">“Your smile in your brother’s face is charity.” <span style="color:var(--muted);font-size:14px">(At-Tirmidhi)</span><br>👉 A kind seller is <b class="hl">better than</b> a rude seller.</p></div>
+</div>
+<div class="note mid" style="margin-top:14px">💬 <b>Discuss:</b> Which of these values can you show at our charity fair stand? Make one sentence with the passive or a comparative.</div></div>`);
+
 add('Proudly Saudi',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Proudly Saudi · Grammar about our country</span><h2 class="title" style="color:var(--sa)">Proud of our country</h2>
-<div class="sa-band"><span class="f">🇸🇦</span><span>Our country has amazing places and products. Let's describe them with today's grammar!</span></div>
+<div class="sa-band"><span class="f">🇸🇦</span><span>Loving our homeland is part of our faith and values. The Prophet ﷺ said about Makkah: <b class="ar" style="color:#fff;font-size:1em">«ما أطيبكِ من بلدٍ وأحبَّكِ إليَّ»</b> “How good you are as a land, and how dear you are to me!” <span style="opacity:.8;font-size:.85em">(At-Tirmidhi)</span></span></div>
 <div class="grid g3">
+<div class="card sa-card"><div class="emoji">🕋</div><h3>The Two Holy Mosques</h3><p class="mid" style="margin:0">The Two Holy Mosques <b class="hl">are served</b> with great care by our country.</p></div>
+<div class="card sa-card"><div class="emoji">📖</div><h3>The Holy Qur’an</h3><p class="mid" style="margin:0">Millions of copies of the Holy Qur’an <b class="hl">are printed</b> in Madinah every year.</p></div>
+<div class="card sa-card"><div class="emoji">🤲</div><h3>Hajj &amp; Umrah</h3><p class="mid" style="margin:0">Millions of pilgrims <b class="hl">are welcomed</b> every year. Makkah is <b class="hl">the holiest</b> city in Islam.</p></div>
 <div class="card sa-card"><div class="emoji">🎉</div><h3>National Day</h3><p class="mid" style="margin:0">Saudi National Day <b class="hl">is celebrated</b> on <b>23 September</b>.</p></div>
 <div class="card sa-card"><div class="emoji">🏰</div><h3>Founding Day</h3><p class="mid" style="margin:0">Founding Day <b class="hl">is celebrated</b> on <b>22 February</b>. At-Turaif in Diriyah <b class="hl">is known as</b> the home of the first Saudi state.</p></div>
 <div class="card sa-card"><div class="emoji">🏙️</div><h3>Riyadh</h3><p class="mid" style="margin:0">Kingdom Centre (302 m) <b class="hl">is taller than</b> Al Faisaliah Tower (267 m).</p></div>
@@ -524,6 +538,8 @@ add('Proudly Saudi',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Pro
 </div></div>`);
 
 add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Game 10 · Proudly Saudi quiz</span><h2 class="title" style="color:var(--sa)">How well do you know our country?</h2><div id="saq"></div></div>`,()=>mcq($('#saq'),[
+  {q:'Millions of copies of the Holy Qur’an ___ in Madinah every year. 📖',o:['are printed','is printed','print'],why:'passive · plural → are printed'},
+  {q:'Makkah is ___ city in Islam. 🕋',o:['the holiest','holier','the most holy'],why:'superlative'},
   {q:'Saudi National Day ___ on 23 September.',o:['is celebrated','celebrates','is celebrate'],why:'passive · simple present'},
   {q:'Hegra in AlUla ___ to the UNESCO list in 2008.',o:['was added','is added','added'],why:'passive · simple past'},
   {pre:'🏙️ Kingdom Centre: 302 m · Al Faisaliah Tower: 267 m',q:'Kingdom Centre is ___ Al Faisaliah Tower.',o:['taller than','as tall as','the tallest']},
@@ -541,7 +557,7 @@ add('Advert challenge',`<div class="wrap"><span class="kicker">📣 Group task �
 <div class="grid g2" style="margin-top:14px">
 <div class="card"><h3>✔️ Your advert must have</h3><p class="mid" style="margin:0">☐ one <b class="hl">passive</b> sentence (<i>is made in…</i>)<br>☐ one <b class="hl">comparative / superlative</b><br>☐ one <b class="hl">as … as</b> or <b class="hl">not as … as</b><br>☐ one <b class="hl">look / smell / sound / taste + like</b><br>☐ <b class="hm">only true information</b>: no cheating! 🤲</p>
 <div class="row" style="margin-top:12px"><button class="btn gold" onclick="startTimer(300)">⏱️ Start 5 minutes</button></div></div>
-<div class="card reveal"><h3>💡 Model advert</h3><span class="hint">Tap to see an example</span><p class="mid ans" style="margin:0"><b>🌹 TAIF ROSE OIL – Made in Saudi Arabia</b><br>This rose oil <b class="hl">is made</b> in Taif from real Taif roses. It <b class="hl">smells like</b> a garden after rain. The small bottle is <b class="hl">not as big as</b> a perfume bottle, but it lasts <b class="hl">longer than</b> many perfumes. Price: 45 SAR. All the money <b class="hl">will be given</b> to charity. 💚</p></div>
+<div class="card reveal"><h3>💡 Model advert</h3><span class="hint">Tap to see an example</span><p class="mid ans" style="margin:0"><b>🌹 TAIF ROSE OIL – Made in Saudi Arabia</b><br>This rose oil <b class="hl">is made</b> in Taif from real Taif roses. It <b class="hl">smells like</b> a garden after rain. The bottle is <b class="hl">not as big as</b> a coffee cup, but it lasts <b class="hl">longer than</b> many oils. Price: 45 SAR. All the money <b class="hl">will be given</b> to charity. 💚</p></div>
 </div>
 <div class="card" style="margin-top:14px;background:var(--mintbg);border-color:#bfe8dd"><span class="tag">🗳️ After the task</span><p class="mid" style="margin:6px 0 0">Each team reads its advert. The class votes: <b>Is it honest? ✔</b> &nbsp;·&nbsp; <b>Does it use all four grammar points? ✔</b> Use 🏆 to give points.</p></div>
 </div>`,()=>{$('#prods').innerHTML=[['🌹','Taif rose oil'],['🌴','Saudi dates'],['🧶','Sadu-woven bag'],['☕','Saudi coffee']].map(([e,n])=>`<div class="card" style="text-align:center"><div class="emoji">${e}</div><h3 style="margin:6px 0 0">${n}</h3><div class="tag" style="margin-top:4px">Made in Saudi 🇸🇦</div></div>`).join('');$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open'))});
@@ -549,23 +565,23 @@ add('Advert challenge',`<div class="wrap"><span class="kicker">📣 Group task �
 add('Exit ticket',`<div class="wrap"><span class="kicker">🎟️ Exit ticket</span><h2 class="title">Before you leave…</h2><div id="exit"></div></div>`,()=>mcq($('#exit'),[
   {q:'This bracelet ___ by hand.',o:['was made','was make','made']},
   {q:'This bag is ___ than that one.',o:['more elegant','elegant','most elegant']},
-  {q:'My perfume is not ___ yours.',o:['as strong as','as strong than','strong as']},
-  {q:'This candle smells ___ vanilla.',o:['like','as','than']}
+  {q:'My coffee is not ___ yours.',o:['as strong as','as strong than','strong as']},
+  {q:'This bakhoor smells ___ oud.',o:['like','as','than']}
 ],{title:'Exit ticket'}));
 
 add('Homework',`<div class="cover"><div class="wrap" style="grid-template-columns:1fr">
 <div style="text-align:center"><div class="emoji" style="font-size:80px">📚</div><h2 class="title">Homework</h2>
 <p class="big">Workbook · Pages <b class="hl">256</b> &amp; <b class="hl">258</b></p>
-<div class="card" style="max-width:640px;margin:14px auto;text-align:left"><h3>⭐ Bonus</h3><p class="mid" style="margin:0">Find a real advert at home (perfume, bag, make-up…). Copy <b>two sentences</b> and underline the passive or comparative.</p></div>
+<div class="card" style="max-width:640px;margin:14px auto;text-align:left"><h3>⭐ Bonus</h3><p class="mid" style="margin:0">Find a real advert for a Saudi product at home (dates, coffee, a bag…). Copy <b>two sentences</b> and underline the passive or comparative.</p></div>
 <h2 class="title" style="margin-top:20px">Thank you! 💖</h2><button class="cta" onclick="go(0)">Back to start ↺</button></div></div></div>`,()=>confetti(120));
 
 /* ---------- data ---------- */
 const PERF=[
-  {e:'🌹',n:'Rose Mist',p:120,ml:50,st:4},
-  {e:'🪵',n:'Oud Royal',p:450,ml:100,st:5},
-  {e:'🍦',n:'Vanilla Dream',p:120,ml:50,st:4}
+  {e:'🍯',n:'Sukkari dates',p:60,ml:'500 g',st:4},
+  {e:'🌴',n:'Ajwa dates',p:120,ml:'1 kg',st:5},
+  {e:'🧺',n:'Khalas dates',p:60,ml:'500 g',st:4}
 ];
-function prodCard(p){return `<div class="card prod"><div class="emoji">${p.e}</div><div class="nm">${p.n}</div><div class="spec"><span>💰 ${p.p} SAR</span><span>🧴 ${p.ml} ml</span><span>${'⭐'.repeat(p.st)}</span></div></div>`}
+function prodCard(p){return `<div class="card prod"><div class="emoji">${p.e}</div><div class="nm">${p.n}</div><div class="spec"><span>💰 ${p.p} SAR</span><span>📦 ${p.ml}</span><span>${'⭐'.repeat(p.st)}</span></div></div>`}
 
 /* ---------- builder ---------- */
 function builder(el,list){
@@ -594,8 +610,8 @@ function builder(el,list){
 const PAIRS=[
   {a:'💍',b:'💍',l:'Silver ring 150 SAR · Gold-tone ring 150 SAR',s:'The silver ring is <b class="hp">as expensive as</b> the gold-tone ring.',eq:true},
   {a:'👛',b:'👜',l:'Mini bag 18 cm · Tote bag 40 cm',s:'The mini bag is <b style="color:#c45f22">not as big as</b> the tote bag.',eq:false},
-  {a:'🌹',b:'🍦',l:'Rose Mist 50 ml · Vanilla Dream 50 ml',s:'Rose Mist is <b class="hp">as big as</b> Vanilla Dream.',eq:true},
-  {a:'🧴',b:'🪵',l:'Body mist (light) · Oud perfume (strong)',s:'The body mist is <b style="color:#c45f22">not as strong as</b> the oud perfume.',eq:false},
+  {a:'🍯',b:'🧺',l:'Sukkari box 500 g · Khalas box 500 g',s:'The Sukkari box is <b class="hp">as heavy as</b> the Khalas box. ⚖️',eq:true},
+  {a:'🌹',b:'🪵',l:'Rose oil (light) · Oud oil (strong)',s:'Rose oil is <b style="color:#c45f22">not as strong as</b> oud oil.',eq:false},
   {a:'⌚',b:'⌚',l:'Pink watch · Gold watch – both very pretty',s:'The pink watch is <b class="hp">as pretty as</b> the gold watch.',eq:true},
   {a:'👠',b:'👟',l:'High heels · Sneakers (comfortable)',s:'High heels are <b style="color:#c45f22">not as comfortable as</b> sneakers.',eq:false}
 ];
@@ -623,42 +639,42 @@ function initMemory(){
 const TOPICS=[['all','All'],['pas','🏭 Passive'],['cmp','📊 Compare'],['as','⚖️ as … as'],['sen','👃 Senses + like']];
 const BANK={
 1:[ // easy – choose the word
- {t:'pas',q:'This perfume ___ made in Taif.',o:['is','are','be']},
+ {t:'pas',q:'This rose oil ___ made in Taif.',o:['is','are','be']},
  {t:'pas',q:'These bags ___ sold online.',o:['are','is','was']},
  {t:'pas',q:'The gift ___ wrapped yesterday.',o:['was','were','is']},
  {t:'cmp',q:'My bag is bigger ___ yours.',o:['than','as','like']},
  {t:'cmp',q:'Gold is ___ than silver.',o:['more expensive','expensiver','most expensive']},
- {t:'cmp',q:'This is the ___ perfume in the shop.',o:['best','better','good']},
+ {t:'cmp',q:'Makkah is the ___ city in Islam. 🕋',o:['holiest','holier','holy']},
  {t:'as',q:'This scarf is as soft ___ silk.',o:['as','than','like']},
  {t:'as',q:'The yellow bag is as heavy ___ the blue bag.',o:['as','than','so']},
  {t:'as',q:'The green gift is ___ as expensive as the blue gift.',o:['not','no','don’t']},
- {t:'sen',q:'This perfume smells ___ roses.',o:['like','as','than']},
+ {t:'sen',q:'Saudi coffee smells ___ cardamom.',o:['like','as','than']},
  {t:'sen',q:'That bag ___ like a designer bag.',o:['looks','sounds','tastes']},
- {t:'sen',q:'This lip balm ___ like strawberries.',o:['tastes','sounds','looks']}],
+ {t:'sen',q:'Sukkari dates ___ like caramel.',o:['taste','sound','look']}],
 2:[ // medium – find the correct sentence / apply the rule
  {t:'pas',q:'Which sentence is correct?',o:['The bracelets were made by hand.','The bracelets was made by hand.','The bracelets were make by hand.']},
  {t:'pas',pre:'Active: Designers create new bags every year.',q:'Passive: New bags ___ every year.',o:['are created','were created','are create']},
- {t:'pas',q:'Oud ___ in perfumes for centuries.',o:['has been used','have been used','has used']},
+ {t:'pas',q:'The Two Holy Mosques ___ many times.',o:['have been expanded','has been expanded','have expanded']},
  {t:'pas',q:'The boxes ___ checked by Reem.',o:['were','was','is']},
  {t:'cmp',q:'Which sentence is correct?',o:['This necklace is cheaper than that one.','This necklace is more cheaper than that one.','This necklace is cheaper as that one.']},
- {t:'cmp',pre:'💄 Lipstick A: 40 SAR · B: 60 SAR · C: 90 SAR',q:'Lipstick C is ___.',o:['the most expensive','more expensive','the expensivest']},
+ {t:'cmp',pre:'🕌 Mosque A: 500 people · B: 2,000 · C: 10,000',q:'Mosque C is ___.',o:['the biggest','bigger','the most big']},
  {t:'cmp',q:'My new watch is ___ than my old one. (good)',o:['better','gooder','more good']},
  {t:'as',q:'Which sentence is correct?',o:['My watch is not as expensive as yours.','My watch is not as expensive than yours.','My watch is not expensive as yours.']},
  {t:'as',pre:'👜 Bag A: 1 kg · 👜 Bag B: 1 kg',q:'Bag A is ___ Bag B.',o:['as heavy as','heavier than','not as heavy as']},
  {t:'as',pre:'🎁 Gift A: 30 SAR · 🎁 Gift B: 50 SAR',q:'Gift A is ___ Gift B.',o:['not as expensive as','as expensive as','more expensive than']},
- {t:'sen',q:'Which sentence is correct?',o:['This perfume smells like roses.','This perfume smells like as roses.','This perfume smells as roses.']},
+ {t:'sen',q:'Which sentence is correct?',o:['This bakhoor smells like roses.','This bakhoor smells like as roses.','This bakhoor smells as roses.']},
  {t:'sen',q:'Your idea ___ like a lot of fun!',o:['sounds','smells','tastes']},
  {t:'sen',q:'This fake flower ___ just like a real one.',o:['looks','tastes','sounds']}],
 3:[ // challenge – type the answer
- {t:'pas',q:'Rewrite in the passive: “They sell perfumes online.”',a:['perfumes are sold online','perfumes are sold online by them']},
+ {t:'pas',q:'Rewrite in the passive: “They sell dates online.”',a:['dates are sold online','dates are sold online by them']},
  {t:'pas',q:'Complete: The new collection ______ (show) next week.',a:['will be shown']},
- {t:'pas',q:'Complete: Chanel No. 5 ______ (launch) in 1921.',a:['was launched']},
+ {t:'pas',q:'Complete: The King Fahd Qur’an Printing Complex ______ (open) in 1984.',a:['was opened']},
  {t:'cmp',q:'Write the superlative of “pretty”.',a:['the prettiest','prettiest']},
  {t:'cmp',q:'Complete: This bag is ______ (comfortable) than that one.',a:['more comfortable']},
- {t:'cmp',q:'Complete: Oud is ______ (strong) than body mist.',a:['stronger']},
+ {t:'cmp',q:'Complete: Oud oil is ______ (strong) than rose oil.',a:['stronger']},
  {t:'as',q:'Ring A = 200 SAR, Ring B = 200 SAR. Complete: Ring A is ______ Ring B. (expensive)',a:['as expensive as']},
  {t:'as',q:'Complete with not as … as: The mini bag is ______ the tote bag. (big)',a:['not as big as']},
- {t:'as',q:'Correct the mistake: “My perfume is as strong than yours.”',a:['my perfume is as strong as yours']},
+ {t:'as',q:'Correct the mistake: “My coffee is as strong than yours.”',a:['my coffee is as strong as yours']},
  {t:'sen',q:'Complete: This shampoo ______ like apples. (smell)',a:['smells']},
  {t:'sen',q:'Complete: The new ringtone ______ like a bird. (sound)',a:['sounds']},
  {t:'sen',q:'Correct the mistake: “This bag looks as a real designer bag.”',a:['this bag looks like a real designer bag']}]
@@ -694,7 +710,7 @@ function initBank(){
 
 /* ---------- sort it ---------- */
 const SORTB=[['pas','🏭 Passive'],['cmp','📊 Comparative / superlative'],['as','⚖️ as … as'],['sen','👃 Sense + like']];
-const SORTC=[['These bags are made in Italy.','pas'],['The gift was wrapped by the shop.','pas'],['Oud Royal is more expensive than Rose Mist.','cmp'],['This is the best perfume in the shop.','cmp'],['The yellow bag is as heavy as the blue bag.','as'],['My bag is not as big as yours.','as'],['This perfume smells like roses.','sen'],['That bag looks like a designer bag.','sen']];
+const SORTC=[['These bags are made in Italy.','pas'],['The gift was wrapped by the shop.','pas'],['Ajwa dates are more expensive than Sukkari dates.','cmp'],['Makkah is the holiest city in Islam.','cmp'],['The yellow bag is as heavy as the blue bag.','as'],['My bag is not as big as yours.','as'],['Saudi coffee smells like cardamom.','sen'],['That bag looks like a designer bag.','sen']];
 function initSort(){
   const el=$('#sort');let sel=null,left=SORTC.length;
   el.innerHTML=`<div class="card"><div class="cards" id="scs">${shuffle(SORTC.map((c,i)=>({c,i}))).map(o=>`<button class="scard" data-i="${o.i}">${o.c[0]}</button>`).join('')}</div>
@@ -708,7 +724,7 @@ function initSort(){
 }
 
 /* ---------- speed true / false ---------- */
-const TFQ=[['This perfume is made in Taif.',1],['The bags was sold online.',0,'The bags were sold online.'],['My bag is bigger than yours.',1],['This ring is more cheaper than that one.',0,'This ring is cheaper than that one.'],['Gold is as expensive than diamonds.',0,'Gold is as expensive as diamonds.'],['This scarf is as soft as silk.',1],['The candle smells like vanilla.',1],['This lip balm tastes as strawberries.',0,'This lip balm tastes like strawberries.'],['The new bags will be delivered tomorrow.',1],['This is the most elegant necklace in the shop.',1],['Your plan sounds like fun!',1],['Oud has been use for centuries.',0,'Oud has been used for centuries.'],['The mini bag is not as big as the tote bag.',1],['This is the goodest perfume.',0,'This is the best perfume.'],['The gifts were wrapped by the shop.',1],['The boxes was checked by Reem.',0,'The boxes were checked by Reem.']];
+const TFQ=[['This rose oil is made in Taif.',1],['The bags was sold online.',0,'The bags were sold online.'],['My bag is bigger than yours.',1],['This ring is more cheaper than that one.',0,'This ring is cheaper than that one.'],['Gold is as expensive than diamonds.',0,'Gold is as expensive as diamonds.'],['This scarf is as soft as silk.',1],['The bakhoor smells like oud.',1],['These dates taste as caramel.',0,'These dates taste like caramel.'],['The new bags will be delivered tomorrow.',1],['This is the most elegant necklace in the shop.',1],['Your plan sounds like fun!',1],['Oud has been use for centuries.',0,'Oud has been used for centuries.'],['The mini bag is not as big as the tote bag.',1],['This is the goodest coffee.',0,'This is the best coffee.'],['The gifts were wrapped by the shop.',1],['The boxes was checked by Reem.',0,'The boxes were checked by Reem.']];
 let tfInt;
 function initTF(){
   const el=$('#tf');clearInterval(tfInt);
@@ -726,7 +742,7 @@ function initTF(){
 /* ---------- honest or cheating ---------- */
 const HONEST=[
  {ad:'“This bag is made of real leather!”',fact:'The bag is made of plastic.',h:0,why:'The advert does not tell the truth about the material.'},
- {ad:'“This perfume is made in Taif from real roses.”',fact:'It is made in Taif from Taif roses.',h:1,why:'The advert tells the truth.'},
+ {ad:'“This rose oil is made in Taif from real roses.”',fact:'It is made in Taif from Taif roses.',h:1,why:'The advert tells the truth.'},
  {ad:'“Our dates are as fresh as dates from the farm!”',fact:'The dates were picked last year.',h:0,why:'Old dates are not as fresh as farm dates.'},
  {ad:'“This bottle is smaller than our big bottle, so it is cheaper.”',fact:'Small bottle: 50 ml, 60 SAR · Big bottle: 100 ml, 110 SAR.',h:1,why:'The size and the price are true.'},
  {ad:'“The bracelet is pure gold. It is the cheapest gold in Riyadh!”',fact:'The bracelet is only gold-coloured.',h:0,why:'Gold-coloured is not real gold. This cheats the buyer.'},
@@ -760,10 +776,10 @@ $('#tFs').onclick=()=>toggleFS();$('#fsx').onclick=()=>toggleFS(false);
 /* ---------- wheel ---------- */
 const SPIN=[
  'Compare your bag with your friend’s bag using <b>as … as</b> or <b>not as … as</b>.',
- 'Describe a perfume you love: <b>It smells like …</b>',
+ 'Describe Saudi coffee: <b>It smells like …</b> ☕',
  'Say one thing that <b>is made</b> in Saudi Arabia.',
- 'What is <b>the most expensive</b> accessory you know?',
- 'Make a one-line advert for a lipstick using <b>looks like</b>.',
+ 'Say one passive sentence about Makkah or Madinah. 🕋 (e.g. <b>… is visited by …</b>)',
+ 'Make a one-line advert for Saudi dates using <b>tastes like</b>. 🌴',
  'Compare gold and silver: <b>… is more … than …</b>',
  'Say something that <b>will be sold</b> at the school bazaar.',
  'Compare two Saudi cities: <b>Riyadh is bigger than …</b> 🇸🇦'
