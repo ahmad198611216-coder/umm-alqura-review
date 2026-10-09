@@ -16,7 +16,7 @@
   --plum:#6b2d5c;--plum2:#8e3f7a;--rose:#e0507f;--blush:#fde8ef;--blush2:#f9d3df;
   --gold:#c9932e;--gold2:#f3d68c;--cream:#fffaf6;--ink:#3a2433;--muted:#7d6573;
   --mint:#21907f;--mintbg:#dff5ef;--coral:#d9534f;--coralbg:#fde3e1;--lav:#efe6fb;--sky:#e3f0fb;
-  --r:20px;--shadow:0 10px 30px rgba(107,45,92,.13);
+  --sa:#006c35;--sa2:#e6f2ea;--r:20px;--shadow:0 10px 30px rgba(107,45,92,.13);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;background:var(--cream);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;font-weight:700}
@@ -178,6 +178,12 @@ button{font:inherit;cursor:pointer;border:0;color:inherit}
 .para{font-size:clamp(17px,2.2vw,22px);line-height:2}
 .para select{font:inherit;font-size:.9em;border:2px solid #ecd3de;border-radius:10px;padding:2px 6px;color:var(--plum);background:#fff}
 .para select.ok{border-color:var(--mint);background:var(--mintbg)}.para select.no{border-color:var(--coral);background:var(--coralbg)}
+/* saudi */
+.sa-kick{background:var(--sa2)!important;color:var(--sa)!important}
+.sa-card{border-top:5px solid var(--sa)}
+.sa-card h3{color:var(--sa)!important}
+.sa-band{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,var(--sa),#0b8a48);color:#fff;border-radius:18px;padding:14px 18px;margin-bottom:14px;font-size:clamp(16px,2vw,20px)}
+.sa-band .f{font-size:34px}
 /* values */
 .ar{font-family:'Amiri','Noto Naskh Arabic','Geeza Pro','Traditional Arabic',serif;direction:rtl;font-size:clamp(22px,3vw,32px);color:var(--plum);line-height:1.6}
 .value{border-top:5px solid var(--gold)}
@@ -229,7 +235,7 @@ body.focus .fsx{display:block}
 <body>
 <div class="app">
   <div class="top">
-    <div class="brand">The Art of Advertising · Grammar<small>MEGA GOAL 1 · UNIT 4 · PAGES 50–51</small></div>
+    <div class="brand">🇸🇦 The Art of Advertising · Grammar<small>MEGA GOAL 1 · UNIT 4 · PAGES 50–51</small></div>
     <button class="tbtn" id="tFs" title="Full screen">⛶</button>
     <button class="tbtn" id="tTimer" title="Timer">⏱️</button>
     <button class="tbtn" id="tTeams" title="Team scores">🏆</button>
@@ -301,7 +307,7 @@ add('Welcome',`<div class="cover"><div class="wrap">
 <div><span class="kicker">✨ Grammar lesson</span>
 <h1 class="title" style="font-size:clamp(34px,6.4vw,66px)">The Art of<br><span class="hl">Advertising</span></h1>
 <p class="sub">Passive voice · Comparatives &amp; superlatives · as … as · look / smell / sound / taste + like</p>
-<div class="meta"><span>📘 Mega Goal 1 – First Secondary</span><span>📍 Unit 4</span><span>📄 Pages 50–51</span></div>
+<div class="meta"><span>📘 Mega Goal 1 – First Secondary</span><span>📍 Unit 4</span><span>📄 Pages 50–51</span><span style="background:var(--sa2);border-color:#bcdcc8;color:var(--sa)">🇸🇦 Proudly Saudi</span></div>
 <button class="cta" onclick="go(1)">Start the lesson ›</button></div>
 <div class="pic"><img src="img/presenter.avif" alt="A teacher holding a perfume bottle next to a board" width="720" height="405"><div class="board" style="left:5%;top:3.5%;width:53.5%;height:52%"><div class="k">Grammar lesson</div><div class="t">The Art of <b>Advertising</b></div><div class="s">Mega Goal 1 · Unit 4</div></div></div>
 </div></div>`);
@@ -502,6 +508,30 @@ add('Our values',`<div class="wrap"><span class="kicker">💚 Values · Advertis
 <div class="card value"><div class="emoji">🇸🇦</div><h3>Love of our country · حب الوطن</h3><p class="mid" style="margin:0">We are proud of products that <b class="hl">are made in Saudi Arabia</b>: Taif roses, Saudi dates, Sadu weaving and Saudi coffee. Supporting them helps our country grow.</p></div>
 </div>
 <div class="note mid" style="margin-top:14px">💬 <b>Think – Pair – Share:</b> Have you ever seen an advert that was <b>not</b> honest? How did the buyer feel?</div></div>`);
+
+add('Proudly Saudi',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Proudly Saudi · Grammar about our country</span><h2 class="title" style="color:var(--sa)">Proud of our country</h2>
+<div class="sa-band"><span class="f">🇸🇦</span><span>Our country has amazing places and products. Let's describe them with today's grammar!</span></div>
+<div class="grid g3">
+<div class="card sa-card"><div class="emoji">🎉</div><h3>National Day</h3><p class="mid" style="margin:0">Saudi National Day <b class="hl">is celebrated</b> on <b>23 September</b>.</p></div>
+<div class="card sa-card"><div class="emoji">🏰</div><h3>Founding Day</h3><p class="mid" style="margin:0">Founding Day <b class="hl">is celebrated</b> on <b>22 February</b>. At-Turaif in Diriyah <b class="hl">is known as</b> the home of the first Saudi state.</p></div>
+<div class="card sa-card"><div class="emoji">🏙️</div><h3>Riyadh</h3><p class="mid" style="margin:0">Kingdom Centre (302 m) <b class="hl">is taller than</b> Al Faisaliah Tower (267 m).</p></div>
+<div class="card sa-card"><div class="emoji">🏜️</div><h3>AlUla</h3><p class="mid" style="margin:0">Hegra in AlUla <b class="hl">was added</b> to the UNESCO World Heritage List in 2008.</p></div>
+<div class="card sa-card"><div class="emoji">🌹</div><h3>Taif roses</h3><p class="mid" style="margin:0">Taif roses <b class="hl">are used</b> to make rose oil. It <b class="hl">smells like</b> a spring garden.</p></div>
+<div class="card sa-card"><div class="emoji">☕</div><h3>Saudi coffee</h3><p class="mid" style="margin:0">Saudi coffee <b class="hl">is served</b> with dates. It <b class="hl">smells like</b> cardamom.</p></div>
+<div class="card sa-card"><div class="emoji">🌴</div><h3>Dates</h3><p class="mid" style="margin:0">Ajwa dates <b class="hl">are grown</b> in Madinah. Are they <b class="hl">as sweet as</b> Sukkari dates? 😋</p></div>
+<div class="card sa-card"><div class="emoji">🧶</div><h3>Al Sadu weaving</h3><p class="mid" style="margin:0">Sadu <b class="hl">is woven</b> by hand. It is <b class="hl">as beautiful as</b> a painting.</p></div>
+<div class="card sa-card"><div class="emoji">🦅</div><h3>Falcons</h3><p class="mid" style="margin:0">The falcon is one of <b class="hl">the fastest</b> birds in the world.</p></div>
+</div></div>`);
+
+add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Game 10 · Proudly Saudi quiz</span><h2 class="title" style="color:var(--sa)">How well do you know our country?</h2><div id="saq"></div></div>`,()=>mcq($('#saq'),[
+  {q:'Saudi National Day ___ on 23 September.',o:['is celebrated','celebrates','is celebrate'],why:'passive · simple present'},
+  {q:'Hegra in AlUla ___ to the UNESCO list in 2008.',o:['was added','is added','added'],why:'passive · simple past'},
+  {pre:'🏙️ Kingdom Centre: 302 m · Al Faisaliah Tower: 267 m',q:'Kingdom Centre is ___ Al Faisaliah Tower.',o:['taller than','as tall as','the tallest']},
+  {q:'Saudi coffee ___ like cardamom. ☕',o:['smells','sounds','looks']},
+  {q:'Taif roses ___ to make rose oil. 🌹',o:['are used','is used','use']},
+  {q:'The falcon is one of ___ birds in the world. 🦅',o:['the fastest','faster','the most fast']},
+  {q:'Sadu weaving is ___ a painting. 🧶',o:['as beautiful as','as beautiful than','beautiful as']}
+],{title:'Proudly Saudi'}),true);
 
 add('Game: Honest or cheating?',`<div class="wrap"><span class="kicker">⚖️ Game 9 · Honest or cheating?</span><h2 class="title">Is this advert honest?</h2><p class="sub">Read the advert and the facts. Is the advert honest, or is it cheating the customer?</p><div id="hc"></div></div>`,initHonest,true);
 
@@ -736,7 +766,7 @@ const SPIN=[
  'Make a one-line advert for a lipstick using <b>looks like</b>.',
  'Compare gold and silver: <b>… is more … than …</b>',
  'Say something that <b>will be sold</b> at the school bazaar.',
- 'Compare two of your teachers’ favourite colours with <b>as … as</b>. 😄'
+ 'Compare two Saudi cities: <b>Riyadh is bigger than …</b> 🇸🇦'
 ];
 const WC=['#e0507f','#8e3f7a','#c9932e','#21907f','#f08aa8','#6b2d5c','#e2793a','#4a8fc9'];
 let wAngle=0;
@@ -750,7 +780,7 @@ function initWheel(){
 }
 
 /* ---------- teams ---------- */
-const TEAMS=[{n:'Roses',e:'🌹',s:0,on:true},{n:'Pearls',e:'🦪',s:0,on:true},{n:'Diamonds',e:'💎',s:0,on:true},{n:'Jasmine',e:'🌼',s:0,on:false}];
+const TEAMS=[{n:'Taif Roses',e:'🌹',s:0,on:true},{n:'Palms',e:'🌴',s:0,on:true},{n:'Falcons',e:'🦅',s:0,on:true},{n:'Pearls',e:'🦪',s:0,on:false}];
 function drawTeams(){const el=$('#teams');el.innerHTML=TEAMS.map((t,k)=>t.on?`<div class="tm">${t.e} ${t.n} <button class="m" data-k="${k}" data-d="-1">−</button><b>${t.s}</b><button data-k="${k}" data-d="1">+</button></div>`:'').join('');
   $$('button',el).forEach(b=>b.onclick=()=>{const t=TEAMS[b.dataset.k];t.s=Math.max(0,t.s+ +b.dataset.d);if(+b.dataset.d>0){beep(true)}drawTeams()})}
 $('#tTeams').onclick=()=>{$('#teams').classList.toggle('hide');drawTeams()};
