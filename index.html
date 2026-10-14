@@ -203,7 +203,12 @@ button{font:inherit;cursor:pointer;border:0;color:inherit}
 .qimg{max-width:640px;margin:0 auto 12px}
 /* full screen */
 .fsbtn{float:right;margin:2px 0 0 10px;background:#fff;border:2px solid #ecd3de;color:var(--plum);border-radius:12px;padding:8px 12px;font-size:14px;font-family:'Fredoka','Nunito',system-ui,sans-serif}
-body.focus .top,body.focus .fsbtn{display:none}
+.ptabs{display:flex;gap:8px;padding:8px 14px 0;background:rgba(255,255,255,.75);border-bottom:2px solid #f1dde6;z-index:5}
+.ptab{flex:1;max-width:340px;border:1.5px solid #ecd3de;border-bottom:0;border-radius:16px 16px 0 0;background:var(--blush);color:var(--plum);font:inherit;font-weight:800;font-size:clamp(14px,1.6vw,17px);padding:10px 12px;margin-bottom:-2px;cursor:pointer}
+.ptab.on{background:#fff;color:var(--rose);border-color:#f1dde6;box-shadow:inset 0 3px 0 var(--rose)}
+.ptab small{display:block;font-weight:700;font-size:11px;color:var(--muted);letter-spacing:.4px}
+@media(max-width:600px){.ptab small{display:none}.ptab{padding:9px 8px}}
+body.focus .top,body.focus .ptabs,body.focus .fsbtn{display:none}
 body.focus .slide{padding-top:16px}
 .fsx{position:fixed;top:max(10px,env(safe-area-inset-top));right:12px;z-index:25;display:none;background:var(--plum);color:#fff;border-radius:14px;padding:9px 14px;font-size:14px;box-shadow:var(--shadow)}
 body.focus .fsx{display:block}
@@ -240,6 +245,10 @@ body.focus .fsx{display:block}
     <button class="tbtn" id="tTimer" title="Timer">⏱️</button>
     <button class="tbtn" id="tTeams" title="Team scores">🏆</button>
     <button class="tbtn" id="tMenu" title="All slides">☰</button>
+  </div>
+  <div class="ptabs" role="tablist" aria-label="Lesson parts">
+    <button class="ptab on" role="tab" data-tab="1" aria-selected="true">📊 Part 1 · Comparisons<small>-er / the -est · as … as · looks like</small></button>
+    <button class="ptab" role="tab" data-tab="2" aria-selected="false">🏭 Part 2 · Passive voice<small>is made · was made · will be made</small></button>
   </div>
   <div class="teams hide" id="teams"></div>
   <div class="stage" id="stage"></div>
@@ -309,7 +318,7 @@ add('Welcome',`<div class="cover"><div class="wrap">
 <h1 class="title" style="font-size:clamp(34px,6.4vw,66px)">The Art of<br><span class="hl">Advertising</span></h1>
 <p class="sub"><b>Part 1:</b> Comparatives &amp; superlatives · as … as · look / smell / sound / taste + like<br><b>Part 2:</b> The passive voice<br><b style="color:var(--sa)">🤲 With Islamic and Saudi values</b></p>
 <div class="meta"><span>📘 Mega Goal 1 – First Secondary</span><span>📍 Unit 4</span><span>📄 Pages 50–51</span><span style="background:var(--sa2);border-color:#bcdcc8;color:var(--sa)">🇸🇦 Proudly Saudi</span></div>
-<div class="row" style="gap:10px;flex-wrap:wrap"><button class="cta" onclick="goPart(1)">Part 1 · Comparisons ›</button><button class="cta" style="background:var(--plum)" onclick="goPart(2)">Part 2 · Passive voice ›</button></div></div>
+<div class="row" style="gap:10px;flex-wrap:wrap"><button class="cta" onclick="go(1)">Start Part 1 ›</button><button class="cta" style="background:var(--plum)" onclick="goPart(2)">Open the Part 2 tab ›</button></div></div>
 <div class="pic"><img src="img/presenter.avif" alt="A teacher holding a bottle of Taif rose oil next to a board" width="720" height="405"><div class="board" style="left:5%;top:3.5%;width:53.5%;height:52%"><div class="k">Grammar lesson</div><div class="t">The Art of <b>Advertising</b></div><div class="s">Mega Goal 1 · Unit 4</div></div></div>
 </div></div>`);
 add('Teams & rules',`<div class="wrap"><span class="kicker">👭 Get ready</span><h2 class="title">Choose your teams</h2>
@@ -901,22 +910,31 @@ $('#tTimer').onclick=()=>{const v=prompt('Timer – how many seconds?','60');if(
 const stage=$('#stage');
 stage.innerHTML=S.map((s,i)=>`<section class="slide" data-i="${i}">${s.game?'<button class="fsbtn" onclick="toggleFS(true)">⛶ Play full screen</button>':''}${s.html}</section>`).join('');
 let cur=0;
-function go(i){i=Math.max(0,Math.min(S.length-1,i));if(i!==cur){clearInterval(tfInt);$$('video').forEach(v=>v.pause());const f=$('#vid');try{f&&f.contentWindow&&f.contentWindow.postMessage('pause','*')}catch(e){}}
-  $$('.slide').forEach(s=>s.classList.toggle('on',+s.dataset.i===i));cur=i;const sl=$$('.slide')[i];sl.scrollTop=0;
+let tab=1;const lastIn={};
+const seq=t=>S.map((x,k)=>k).filter(k=>S[k].part===t||(S[k].part===0&&(t===1||S[k].name==='Teams & rules')));
+function setTab(t){tab=t;$$('.ptab').forEach(b=>{const on=+b.dataset.tab===t;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)})}
+function go(i){i=Math.max(0,Math.min(S.length-1,i));if(S[i].part&&S[i].part!==tab)setTab(S[i].part);else if(!seq(tab).includes(i))setTab(1);
+  if(i!==cur){clearInterval(tfInt);$$('video').forEach(v=>v.pause());const f=$('#vid');try{f&&f.contentWindow&&f.contentWindow.postMessage('pause','*')}catch(e){}}
+  $$('.slide').forEach(s=>s.classList.toggle('on',+s.dataset.i===i));cur=i;lastIn[tab]=i;const sl=$$('.slide')[i];sl.scrollTop=0;
   if(S[i].init&&(!sl.dataset.done||S[i].reinit)){S[i].init();sl.dataset.done=1}else if(S[i].init&&S[i].name.startsWith('Homework'))confetti(120);
-  $('#barI').style.width=((i+1)/S.length*100)+'%';const pp=S.filter(x=>x.part===S[i].part),pk=pp.indexOf(S[i]);$('#cnt').textContent=S[i].part?`P${S[i].part} · ${pk+1}/${pp.length}`:`${i+1}/${S.length}`;$('#prev').disabled=i===0;$('#next').disabled=i===S.length-1;
-  try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
-function goPart(n){const k=S.findIndex(x=>x.part===n&&x.cover);go(k<0?0:k)}
+  const q=seq(tab),pos=q.indexOf(i);
+  $('#barI').style.width=((pos+1)/q.length*100)+'%';$('#cnt').textContent=`${pos+1}/${q.length}`;$('#prev').disabled=pos<=0;$('#next').disabled=pos>=q.length-1;
+  try{history.replaceState(null,'','#part'+tab+'-'+(pos+1))}catch(e){}}
+function step(d){const q=seq(tab),pos=q.indexOf(cur),n=q[pos+d];if(n!==undefined)go(n)}
+function goPart(n){setTab(n);const k=lastIn[n]!==undefined?lastIn[n]:S.findIndex(x=>x.part===n&&x.cover);go(k<0?0:k)}
+$$('.ptab').forEach(b=>b.onclick=()=>goPart(+b.dataset.tab));
 window.go=go;window.goPart=goPart;window.S=S;window.startTimer=startTimer;
-$('#prev').onclick=()=>go(cur-1);$('#next').onclick=()=>go(cur+1);
-document.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT'||e.target.tagName==='INPUT')return;if(e.key==='ArrowRight'||e.key===' '&&!e.target.closest('button'))go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+$('#prev').onclick=()=>step(-1);$('#next').onclick=()=>step(1);
+document.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT'||e.target.tagName==='INPUT')return;if(e.key==='ArrowRight'||e.key===' '&&!e.target.closest('button'))step(1);if(e.key==='ArrowLeft')step(-1)});
 let sx=null,sy=null;stage.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
-stage.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6&&!e.target.closest('.mem,.wheelbox'))go(cur+(dx<0?1:-1));sx=null},{passive:true});
+stage.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6&&!e.target.closest('.mem,.wheelbox'))step(dx<0?1:-1);sx=null},{passive:true});
 const sh=$('#sheet');
-$('#tMenu').onclick=()=>{sh.innerHTML='<h3 class="fd" style="color:var(--plum);padding:4px 12px 10px">Lesson map</h3>'+S.map((s,i)=>(s.part&&(i===0||S[i-1].part!==s.part)?`<div style="padding:12px 12px 4px;font-weight:800;color:var(--rose);font-size:13px;letter-spacing:1px;text-transform:uppercase">${s.part===1?'📊 Part 1 · Comparisons':'🏭 Part 2 · Passive voice'}</div>`:'')+`<a href="#" data-i="${i}" class="${i===cur?'cur':''}"><span>${i+1}</span>${s.name}</a>`).join('');
+$('#tMenu').onclick=()=>{sh.innerHTML=`<h3 class="fd" style="color:var(--plum);padding:4px 12px 10px">${tab===1?'📊 Part 1 · Comparisons':'🏭 Part 2 · Passive voice'}</h3>`+seq(tab).map((i,k)=>`<a href="#" data-i="${i}" class="${i===cur?'cur':''}"><span>${k+1}</span>${S[i].name}</a>`).join('');
   $$('a',sh).forEach(a=>a.onclick=e=>{e.preventDefault();$('#menu').classList.remove('on');go(+a.dataset.i)});$('#menu').classList.add('on')};
 $('#menu').onclick=e=>{if(e.target.id==='menu')e.currentTarget.classList.remove('on')};
-const hs=location.hash.slice(1);if(hs==='part1'||hs==='part2')goPart(+hs.slice(-1));else{const h=parseInt(hs);go(h>0?h-1:0)}
+{const m=location.hash.match(/^#part([12])(?:-(\d+))?$/),h=parseInt(location.hash.slice(1));
+ if(m){setTab(+m[1]);const q=seq(+m[1]),k=m[2]?q[+m[2]-1]:undefined;k!==undefined?go(k):goPart(+m[1])}
+ else go(h>0?h-1:0)}
 </script>
 </body>
 </html>
