@@ -441,10 +441,6 @@ add('Game: Picture quiz',`<div class="wrap"><span class="kicker">🖼️ Game 4 
   {img:'rose',q:'Mmm… it ___ like a rose, too!',o:['smells','sounds','looks like']}
 ],{title:'Picture quiz'}),true);
 add('Game: Sort it',`<div class="wrap"><span class="kicker">🗂️ Game 5 · Sort it</span><h2 class="title">Sort the sentences</h2><p class="sub">Tap a sentence, then tap the correct box.</p><div id="sort1"></div></div>`,()=>sortGame('sort1',SORT1B,SORT1C),true);
-add('Game: Speed true or false',`<div class="wrap"><span class="kicker">⚡ Game 6 · 60-second challenge</span><h2 class="title">True or false?</h2><p class="sub">Is the sentence correct? Answer as many as you can in 60 seconds!</p><div id="tf1"></div></div>`,()=>tfGame('tf1',TF1),true);reinit();
-add('Memory game',`<div class="wrap"><span class="kicker">🧠 Game 7 · Memory</span><h2 class="title">Match the pairs</h2>
-<p class="sub">Find each adjective and its comparative. <span id="m1Info" class="hp"></span></p>
-<div class="mem" id="m1"></div><div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="m1R">New game ↻</button></div></div>`,()=>memGame('m1',MEM));
 add('Question bank: 3 levels',`<div class="wrap"><span class="kicker">🌟 Question bank · Different levels</span><h2 class="title">Choose your level</h2>
 <div class="lvls" id="b1lvls"></div>
 <div class="tabs" id="b1topics" style="margin-top:14px"></div>
@@ -478,7 +474,7 @@ add('Proudly Saudi',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Pro
 <div class="card sa-card"><div class="emoji">🧶</div><h3>Al Sadu weaving</h3><p class="mid" style="margin:0">Sadu weaving is <b class="hl">as beautiful as</b> a painting.</p></div>
 <div class="card sa-card"><div class="emoji">🚄</div><h3>Haramain train</h3><p class="mid" style="margin:0">The Haramain train is <b class="hl">faster than</b> a car between Makkah and Madinah.</p></div>
 </div></div>`);
-add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Game 8 · Proudly Saudi quiz</span><h2 class="title" style="color:var(--sa)">How well do you know our country?</h2><div id="saq1"></div></div>`,()=>mcq($('#saq1'),[
+add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Game 6 · Proudly Saudi quiz</span><h2 class="title" style="color:var(--sa)">How well do you know our country?</h2><div id="saq1"></div></div>`,()=>mcq($('#saq1'),[
   {q:'Makkah is ___ city in Islam. 🕋',o:['the holiest','holier','the most holy'],why:'superlative'},
   {pre:'🏙️ Kingdom Centre: 302 m · Al Faisaliah Tower: 267 m',q:'Kingdom Centre is ___ Al Faisaliah Tower.',o:['taller than','as tall as','the tallest']},
   {q:'In summer, Abha is ___ Riyadh. ⛰️',o:['cooler than','more cool than','the coolest']},
@@ -489,17 +485,6 @@ add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">�
   {q:'The old mud houses of At-Turaif ___ like castles. 🏰',o:['look','taste','sound']},
   {q:'Saudi coffee ___ like cardamom. ☕',o:['smells','sounds','looks']}
 ],{title:'Proudly Saudi'}),true);
-add('Game: Honest or cheating?',`<div class="wrap"><span class="kicker">⚖️ Game 9 · Honest or cheating?</span><h2 class="title">Is this advert honest?</h2><p class="sub">Read the advert and the facts. Is the advert honest, or is it cheating the customer?</p><div id="hc1"></div></div>`,()=>honestGame('hc1',HONEST1),true);
-add('Advert challenge',`<div class="wrap"><span class="kicker">📣 Group task · Our charity fair</span><h2 class="title">Write an honest advert for a Saudi product</h2>
-<p class="sub">Our class has a stand at the <b>school charity fair</b>. Each team chooses one Saudi product and writes a short, <b class="hl">honest</b> advert. Everybody helps: one writes, one checks the grammar, one designs, one presents. 🤝</p>
-<div class="grid g4" id="prods"></div>
-<div class="grid g2" style="margin-top:14px">
-<div class="card"><h3>✔️ Your advert must have</h3><p class="mid" style="margin:0">☐ one <b class="hl">comparative / superlative</b><br>☐ one <b class="hl">as … as</b> or <b class="hl">not as … as</b><br>☐ one <b class="hl">look / smell / sound / taste + like</b><br>☐ <b class="hm">only true information</b>: no cheating! 🤲</p>
-<div class="row" style="margin-top:12px"><button class="btn gold" onclick="startTimer(300)">⏱️ Start 5 minutes</button></div></div>
-<div class="card reveal"><h3>💡 Model advert</h3><span class="hint">Tap to see an example</span><p class="mid ans" style="margin:0"><b>🌹 TAIF ROSE OIL</b><br>Our rose oil <b class="hl">smells like</b> a garden after rain. The bottle is <b class="hl">not as big as</b> a coffee cup, but it lasts <b class="hl">longer than</b> many oils. It is <b class="hl">the best</b> gift for your mother. Price: 45 SAR. 💚</p></div>
-</div>
-<div class="card" style="margin-top:14px;background:var(--mintbg);border-color:#bfe8dd"><span class="tag">🗳️ After the task</span><p class="mid" style="margin:6px 0 0">Each team reads its advert. The class votes: <b>Is it honest? ✔</b> &nbsp;·&nbsp; <b>Does it use all three comparison points? ✔</b> Use 🏆 to give points.</p></div>
-</div>`,()=>{$('#prods').innerHTML=[['🌹','Taif rose oil'],['🌴','Saudi dates'],['🧶','Sadu-woven bag'],['☕','Saudi coffee']].map(([e,n])=>`<div class="card" style="text-align:center"><div class="emoji">${e}</div><h3 style="margin:6px 0 0">${n}</h3><div class="tag" style="margin-top:4px">Made in Saudi 🇸🇦</div></div>`).join('');$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open'))});
 add('Exit ticket',`<div class="wrap"><span class="kicker">🎟️ Exit ticket · Part 1</span><h2 class="title">Before you leave…</h2><div id="exit1"></div></div>`,()=>mcq($('#exit1'),[
   {q:'This bag is ___ than that one.',o:['more elegant','elegant','most elegant']},
   {q:'Makkah is ___ city in Islam.',o:['the holiest','holier','the most holy']},
@@ -573,9 +558,13 @@ add('Game: Picture quiz',`<div class="wrap"><span class="kicker">🖼️ Game 3 
 ],{title:'Picture quiz'}),true);
 add('Game: Sort it',`<div class="wrap"><span class="kicker">🗂️ Game 4 · Sort it</span><h2 class="title">Sort the passive sentences</h2><p class="sub">Which tense is it? Tap a sentence, then tap the correct box.</p><div id="sort2"></div></div>`,()=>sortGame('sort2',SORT2B,SORT2C),true);
 add('Game: Speed true or false',`<div class="wrap"><span class="kicker">⚡ Game 5 · 60-second challenge</span><h2 class="title">True or false?</h2><p class="sub">Is the passive sentence correct? Answer as many as you can in 60 seconds!</p><div id="tf2"></div></div>`,()=>tfGame('tf2',TF2),true);reinit();
-add('Memory game',`<div class="wrap"><span class="kicker">🧠 Game 6 · Memory</span><h2 class="title">Match the pairs</h2>
+add('Game: True or false (comparisons)',`<div class="wrap"><span class="kicker">⚡ Game 6 · Comparisons review · 60-second challenge</span><h2 class="title">True or false?</h2><p class="sub">Is the sentence correct? Answer as many as you can in 60 seconds!</p><div id="tf1"></div></div>`,()=>tfGame('tf1',TF1),true);reinit();
+add('Memory game',`<div class="wrap"><span class="kicker">🧠 Game 7 · Memory</span><h2 class="title">Match the pairs</h2>
 <p class="sub">Find each verb and its past participle (V3). <span id="m2Info" class="hp"></span></p>
 <div class="mem" id="m2"></div><div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="m2R">New game ↻</button></div></div>`,()=>memGame('m2',MEM2));
+add('Memory game (comparisons)',`<div class="wrap"><span class="kicker">🧠 Game 8 · Comparisons review · Memory</span><h2 class="title">Match the pairs</h2>
+<p class="sub">Find each adjective and its comparative. <span id="m1Info" class="hp"></span></p>
+<div class="mem" id="m1"></div><div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="m1R">New game ↻</button></div></div>`,()=>memGame('m1',MEM));
 add('Question bank: 3 levels',`<div class="wrap"><span class="kicker">🌟 Question bank · Different levels</span><h2 class="title">Choose your level</h2>
 <div class="lvls" id="b2lvls"></div>
 <div class="tabs" id="b2topics" style="margin-top:14px"></div>
@@ -609,7 +598,7 @@ add('Proudly Saudi',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Pro
 <div class="card sa-card"><div class="emoji">🧶</div><h3>Al Sadu weaving</h3><p class="mid" style="margin:0">Sadu <b class="hl">is woven</b> by hand and <b class="hl">has been loved</b> for hundreds of years.</p></div>
 <div class="card sa-card"><div class="emoji">🌍</div><h3>Expo 2030</h3><p class="mid" style="margin:0">Expo 2030 <b class="hl">will be hosted</b> in Riyadh.</p></div>
 </div></div>`);
-add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Game 7 · Proudly Saudi quiz</span><h2 class="title" style="color:var(--sa)">How well do you know our country?</h2><div id="saq2"></div></div>`,()=>mcq($('#saq2'),[
+add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">🇸🇦 Game 9 · Proudly Saudi quiz</span><h2 class="title" style="color:var(--sa)">How well do you know our country?</h2><div id="saq2"></div></div>`,()=>mcq($('#saq2'),[
   {q:'Millions of copies of the Holy Qur’an ___ in Madinah every year. 📖',o:['are printed','is printed','print'],why:'passive · plural → are printed'},
   {q:'Saudi National Day ___ on 23 September. 🎉',o:['is celebrated','celebrates','is celebrate'],why:'passive · simple present'},
   {q:'Hegra in AlUla ___ to the UNESCO list in 2008. 🏜️',o:['was added','is added','added'],why:'passive · simple past'},
@@ -620,7 +609,8 @@ add('Game: Proudly Saudi quiz',`<div class="wrap"><span class="kicker sa-kick">�
   {q:'The Two Holy Mosques ___ many times. 🕋',o:['have been expanded','has been expanded','have expanded'],why:'present perfect passive'},
   {q:'Expo 2030 ___ in Riyadh. 🌍',o:['will be hosted','will host','was hosted'],why:'future passive'}
 ],{title:'Proudly Saudi'}),true);
-add('Game: Honest or cheating?',`<div class="wrap"><span class="kicker">⚖️ Game 8 · Honest or cheating?</span><h2 class="title">Is this advert honest?</h2><p class="sub">Read the advert and the facts. Is the advert honest, or is it cheating the customer?</p><div id="hc2"></div></div>`,()=>honestGame('hc2',HONEST2),true);
+add('Game: Honest or cheating?',`<div class="wrap"><span class="kicker">⚖️ Game 10 · Honest or cheating?</span><h2 class="title">Is this advert honest?</h2><p class="sub">Read the advert and the facts. Is the advert honest, or is it cheating the customer?</p><div id="hc2"></div></div>`,()=>honestGame('hc2',HONEST2),true);
+add('Game: Honest or cheating? (comparisons)',`<div class="wrap"><span class="kicker">⚖️ Game 11 · Comparisons review · Honest or cheating?</span><h2 class="title">Is this advert honest?</h2><p class="sub">Read the advert and the facts. Is the advert honest, or is it cheating the customer?</p><div id="hc1"></div></div>`,()=>honestGame('hc1',HONEST1),true);
 add('Advert challenge',`<div class="wrap"><span class="kicker">📣 Group task · Our charity fair</span><h2 class="title">Write an honest advert for a Saudi product</h2>
 <p class="sub">Our class has a stand at the <b>school charity fair</b>. Each team chooses one Saudi product and writes a short, <b class="hl">honest</b> advert. Everybody helps: one writes, one checks the grammar, one designs, one presents. 🤝</p>
 <div class="grid g4" id="prods"></div>
@@ -630,6 +620,16 @@ add('Advert challenge',`<div class="wrap"><span class="kicker">📣 Group task �
 <div class="card reveal"><h3>💡 Model advert</h3><span class="hint">Tap to see an example</span><p class="mid ans" style="margin:0"><b>🌹 TAIF ROSE OIL – Made in Saudi Arabia</b><br>This rose oil <b class="hl">is made</b> in Taif from real Taif roses. The roses <b class="hl">were picked</b> by hand last spring. Taif rose oil <b class="hl">has been loved</b> by families for many years. Price: 45 SAR. All the money <b class="hl">will be given</b> to charity. 💚</p></div>
 </div>
 <div class="card" style="margin-top:14px;background:var(--mintbg);border-color:#bfe8dd"><span class="tag">🗳️ After the task</span><p class="mid" style="margin:6px 0 0">Each team reads its advert. The class votes: <b>Is it honest? ✔</b> &nbsp;·&nbsp; <b>Does it use three passive sentences? ✔</b> Use 🏆 to give points.</p></div>
+</div>`,()=>{$('#prods').innerHTML=[['🌹','Taif rose oil'],['🌴','Saudi dates'],['🧶','Sadu-woven bag'],['☕','Saudi coffee']].map(([e,n])=>`<div class="card" style="text-align:center"><div class="emoji">${e}</div><h3 style="margin:6px 0 0">${n}</h3><div class="tag" style="margin-top:4px">Made in Saudi 🇸🇦</div></div>`).join('');$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open'))});
+add('Advert challenge (comparisons)',`<div class="wrap"><span class="kicker">📣 Group task · Comparisons review</span><h2 class="title">Write an honest advert for a Saudi product</h2>
+<p class="sub">Our class has a stand at the <b>school charity fair</b>. Each team chooses one Saudi product and writes a short, <b class="hl">honest</b> advert. Everybody helps: one writes, one checks the grammar, one designs, one presents. 🤝</p>
+<div class="grid g4" id="prods"></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h3>✔️ Your advert must have</h3><p class="mid" style="margin:0">☐ one <b class="hl">comparative / superlative</b><br>☐ one <b class="hl">as … as</b> or <b class="hl">not as … as</b><br>☐ one <b class="hl">look / smell / sound / taste + like</b><br>☐ <b class="hm">only true information</b>: no cheating! 🤲</p>
+<div class="row" style="margin-top:12px"><button class="btn gold" onclick="startTimer(300)">⏱️ Start 5 minutes</button></div></div>
+<div class="card reveal"><h3>💡 Model advert</h3><span class="hint">Tap to see an example</span><p class="mid ans" style="margin:0"><b>🌹 TAIF ROSE OIL</b><br>Our rose oil <b class="hl">smells like</b> a garden after rain. The bottle is <b class="hl">not as big as</b> a coffee cup, but it lasts <b class="hl">longer than</b> many oils. It is <b class="hl">the best</b> gift for your mother. Price: 45 SAR. 💚</p></div>
+</div>
+<div class="card" style="margin-top:14px;background:var(--mintbg);border-color:#bfe8dd"><span class="tag">🗳️ After the task</span><p class="mid" style="margin:6px 0 0">Each team reads its advert. The class votes: <b>Is it honest? ✔</b> &nbsp;·&nbsp; <b>Does it use all three comparison points? ✔</b> Use 🏆 to give points.</p></div>
 </div>`,()=>{$('#prods').innerHTML=[['🌹','Taif rose oil'],['🌴','Saudi dates'],['🧶','Sadu-woven bag'],['☕','Saudi coffee']].map(([e,n])=>`<div class="card" style="text-align:center"><div class="emoji">${e}</div><h3 style="margin:6px 0 0">${n}</h3><div class="tag" style="margin-top:4px">Made in Saudi 🇸🇦</div></div>`).join('');$$('.reveal').forEach(r=>r.onclick=()=>r.classList.add('open'))});
 add('Exit ticket',`<div class="wrap"><span class="kicker">🎟️ Exit ticket · Part 2</span><h2 class="title">Before you leave…</h2><div id="exit2"></div></div>`,()=>mcq($('#exit2'),[
   {q:'This bracelet ___ by hand.',o:['was made','was make','made']},
