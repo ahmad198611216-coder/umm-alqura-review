@@ -773,7 +773,7 @@ function loop(now){var dt=Math.min(.05,(now-last)/1000);last=now;T+=dt;
  if(flash>0){ctx.fillStyle=flashC;ctx.globalAlpha=flash*.25;ctx.fillRect(0,0,W,H);ctx.globalAlpha=1;flash=Math.max(0,flash-dt*2.5)}
  music(dt);requestAnimationFrame(loop)}
 function theme(){return run?run.w:(WORLDS[0]||{c1:'#22e3ff',c2:'#3a1c71'})}
-(function(){var h=(location.hash||'').replace('#g','');if(h&&BANK.grades.some(function(g){return g.grade===h}))store.grade=h;GRADE=store.grade||'6';setGrade(GRADE);})();
+(function(){var h=(location.hash||'').slice(1).toLowerCase(),mg=h.match(/g(\d+|uni)/),mm=h.match(/strike|race|sniper/);if(mg&&BANK.grades.some(function(g){return g.grade===mg[1]}))store.grade=mg[1];if(mm){modeId=mm[0];store.mode=modeId}GRADE=store.grade||'6';setGrade(GRADE);})();
 resize();
 if(!GLOK){document.body.insertAdjacentHTML('beforeend','<div id="nogl"><div><h1>WebGL is not available</h1><p class="help">This 3D game needs WebGL. Please open it in an up-to-date Chrome, Edge or Safari, or turn on hardware acceleration.</p></div></div>')}
 else{initGL();buildTextures();buildShared();Racer.menuStart()}
