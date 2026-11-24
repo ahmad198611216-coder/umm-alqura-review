@@ -245,6 +245,13 @@ bdi.l{direction:ltr;unicode-bidi:isolate}
 <meta name="description" content="المراجعة الشاملة لمدرسة أم القرى الابتدائية: تدريبات تفاعلية للصفين الخامس والسادس، إعداد المعلم أحمد القطناني.">
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#8A1538">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="المراجعة الشاملة">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="/icon-192.png">
 </head>
 <body>
 <header class="bar">
@@ -1943,12 +1950,29 @@ function home(){if(SUPA&&!ST&&!GUEST)return login();ses=null;setColor('');bar('�
  '<button class="tile" data-act="mixall"><span class="em">🎲</span><span><b>اختبار سريع من كل المواد</b><small>12 سؤالاً عشوائياً تُصحَّح فوراً</small></span></button>'+
  '<button class="tile" data-act="mist"><span class="em">📕</span><span><b>دفتر أخطائي'+(w?' ('+w+')':'')+'</b><small>الأسئلة التي أخطأت فيها مع تصحيحها</small></span></button>'+
  '<button class="tile" data-act="genpick"><span class="em">✨</span><span><b>ولّد أسئلة جديدة</b><small>أسئلة بصياغة وأرقام جديدة في كل مرة</small></span></button>'+
- '</div><p class="foot"><b>المراجعة الشاملة لمدرسة أم القرى الابتدائية — إعداد المعلم: أحمد القطناني</b><br>الأسئلة والإجابات مأخوذة من أوراق التدريبات الإثرائية المحلولة. هذه التدريبات لا تغني عن الكتاب المدرسي.<br><button class="btn sec2 sm" data-act="reset" style="margin-top:10px">مسح تقدّمي والبدء من جديد</button>'+(SUPA&&ST?' <button class="btn sec2 sm" data-act="swap" style="margin-top:10px">تغيير الطالب</button>':'')+'</p>')}
+ installTile()+'</div><p class="foot"><b>المراجعة الشاملة لمدرسة أم القرى الابتدائية — إعداد المعلم: أحمد القطناني</b><br>الأسئلة والإجابات مأخوذة من أوراق التدريبات الإثرائية المحلولة. هذه التدريبات لا تغني عن الكتاب المدرسي.<br><button class="btn sec2 sm" data-act="reset" style="margin-top:10px">مسح تقدّمي والبدء من جديد</button>'+(SUPA&&ST?' <button class="btn sec2 sm" data-act="swap" style="margin-top:10px">تغيير الطالب</button>':'')+'</p>')}
 
 
 function papers(){ses=null;setColor('');bar('أوراق المراجعة الأصلية — '+GN[S.grade],home);var L=PAPERS[S.grade]||[];
  show('<div class="sheet"><h3 class="h3" style="margin-top:0">📂 أوراق مراجعة نهاية الفصل الأول — '+GN[S.grade]+'</h3><p class="note">جُمعت من موقع «المناهج القطرية»، ومعظمها من إعداد مدارس ومعلمين. ملفات 2025–2026 تصلح للتدريب؛ تحقّق من نطاق الدروس.</p>'+
  L.map(function(x){return '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:10px 0"><div><b>'+esc(x.t)+'</b><br><small dir="ltr">'+esc(x.y)+'</small>'+(x.a?' <small style="color:#15803D;font-weight:800">· مع الإجابة النموذجية</small>':'')+'</div><div style="display:flex;gap:6px">'+(x.f?'<a class="btn sm" style="text-decoration:none;white-space:nowrap" href="'+x.f+'" target="_blank" rel="noopener">فتح الملف</a>':'')+'<a class="btn sec2 sm" style="text-decoration:none;white-space:nowrap" href="'+x.s+'" target="_blank" rel="noopener">المصدر</a></div></div>'}).join('')+'</div>')}
+/* ---------- install as an app ---------- */
+var DEF=null;
+function standalone(){return (window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true}
+function isIOS(){return /iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)}
+function installable(){return !!SUPA&&!standalone()}
+function installTile(){return installable()?'<button class="tile" data-act="install"><span class="em">📲</span><span><b>ثبّت التطبيق على هاتفك</b><small>يفتح من الشاشة الرئيسية ويعمل حتى بدون إنترنت</small></span></button>':''}
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();DEF=e});
+window.addEventListener('appinstalled',function(){DEF=null;$$('[data-act="install"]').forEach(function(x){x.hidden=true})});
+function installHelp(){var ios=isIOS(),old=$('.modal');if(old)old.remove();var m=document.createElement('div');m.className='modal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');
+ m.innerHTML='<div class="sheet"><h3 class="h3" style="margin-top:0">📲 تثبيت التطبيق</h3>'+(ios?
+ '<ol class="steps"><li>افتح الموقع في متصفح <b>Safari</b> (وليس من داخل واتساب أو تيليجرام).</li><li>اضغط زر المشاركة <b>⬆️</b> أسفل الشاشة.</li><li>اختر <b>إضافة إلى الشاشة الرئيسية</b> ثم اضغط <b>إضافة</b>.</li></ol>':
+ '<ol class="steps"><li>افتح الموقع في متصفح <b>Chrome</b> (وليس من داخل واتساب أو تيليجرام).</li><li>اضغط قائمة المتصفح <b>⋮</b> أعلى الشاشة.</li><li>اختر <b>تثبيت التطبيق</b> أو <b>إضافة إلى الشاشة الرئيسية</b>.</li></ol>')+
+ '<p class="note">بعد التثبيت يظهر رمز «المراجعة الشاملة» بين تطبيقات هاتفك.</p><div class="acts"><button class="btn" data-act="closemodal">حسناً</button></div></div>';
+ document.body.appendChild(m);var b=$('.btn',m);if(b)b.focus()}
+function doInstall(){if(DEF){var d=DEF;DEF=null;try{d.prompt()}catch(e){installHelp()}return}installHelp()}
+if(SUPA&&'serviceWorker' in navigator&&/^https?:/.test(location.protocol)){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})})}
+
 /* ---------- student sign-in ---------- */
 var lgGrade=0;
 function login(){ses=null;setColor('');bar('المراجعة الشاملة — مدرسة أم القرى');lgGrade=0;var ro=lsGet(KEY+'-roster')||[];
@@ -1960,7 +1984,7 @@ function login(){ses=null;setColor('');bar('المراجعة الشاملة — 
  '<label for="lgSec">الشعبة (اختياري)</label><input id="lgSec" class="inp" maxlength="12" inputmode="numeric" placeholder="مثال: 3" style="max-width:12em">'+
  '<p class="note err" id="lgErr" role="alert"></p><div class="acts"><button class="btn" data-act="login">ابدأ المراجعة</button></div>'+
  '<p class="note">يُحفظ اسمك وصفك ونتائج اختباراتك ليطّلع عليها معلمك فقط.</p></div>'+
- '<p class="foot"><button class="btn sec2 sm" data-act="admin">دخول المعلم</button></p>')}
+ '<p class="foot">'+(installable()?'<button class="btn sec2 sm" data-act="install">📲 ثبّت التطبيق</button> ':'')+'<button class="btn sec2 sm" data-act="admin">دخول المعلم</button></p>')}
 function doLogin(){var name=($('#lgName').value||'').replace(/\s+/g,' ').trim(),sec=($('#lgSec').value||'').trim().slice(0,12),er=$('#lgErr');
  if(name.length<3){er.textContent='اكتب اسمك أولاً.';return}if(!lgGrade){er.textContent='اختر صفّك.';return}
  enter({id:uuid(),name:name.slice(0,60),grade:lgGrade,sec:sec})}
@@ -2231,6 +2255,7 @@ document.addEventListener('click',function(e){
  if(a==='sound'){S.sound=!S.sound;save();b.setAttribute('aria-pressed',S.sound);b.textContent=S.sound?'🔊':'🔇';if(S.sound)sfx.ok();return}
  if(a==='big'){S.big=!S.big;save();document.documentElement.classList.toggle('big',S.big);b.setAttribute('aria-pressed',S.big);return}
  if(a==='grade'){S.grade=+b.dataset.g;save();sfx.tap();return home()}
+ if(a==='install')return doInstall();
  if(a==='term'){S.term=b.dataset.t;save();sfx.tap();return home()}
  if(a==='subj'){sfx.tap();return subject(id)}
  if(a==='sec'){var sec=set.secs[+b.dataset.i];return startQuiz({title:sec.t,set:set,items:sec.qs,back:function(){subject(id)}})}
