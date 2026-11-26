@@ -2079,9 +2079,10 @@ function qHeadHTML(q,set,t,L,first){var sec=q._sec||{},openP=first||ses.i===0||(
  h+='<div class="qhead"><div class="qt">'+fmt(q.q).replace(/___/g,function(){return '<span class="blank" data-b="'+(k++)+'">&nbsp;</span>'})+'</div>'+(canSpeak?'<button class="say" data-act="say" aria-label="'+t.listen+'" title="'+t.listen+'">🔊</button>':'')+'</div>';
  if(q.em)h+='<div class="bigem" aria-hidden="true">'+q.em+'</div>';if(q.im)h+=img(q.im);if(q.ai)h+='<p class="note">✨ '+t.aiNote+'</p>';return h}
 function topHTML(t){var n=ses.items.length;return '<div class="qtop"><button class="btn sec2 sm" data-act="exit">✕ '+t.exit+'</button><span class="track"><i style="width:'+Math.round(100*ses.i/n)+'%"></i></span><span class="cnt">'+(ses.i+1)+' / '+n+'</span></div>'}
+function autoOk(q,box,H){if(!H.ready())return false;var k=q.k;if(k==='mc'||k==='tf'||k==='ma'||k==='cl'||k==='or')return true;if(k==='fb')return !!q.bank;if(k==='ms')return $$('.opt.sel',box).length===q.a.length;return false}
 function showQ(){var q=ses.items[ses.i],set=q._set||ses.set,L=lang(set),t=T[L];bar(ses.title,function(){ses.back()});setColor(set.sub.c);
  show(topHTML(t)+'<div class="sheet">'+qHeadHTML(q,set,t,L)+'<div class="body"></div><div class="acts"><button class="btn" id="chk" disabled>'+t.check+'</button></div><div id="fb" aria-live="polite"></div></div>',L==='en'?'ltr':'');
- var box=$('.body',app),chk=$('#chk'),H=KIND[q.k](q,box,t,function(){chk.disabled=!H.ready();if((q.k==='mc'||q.k==='tf')&&H.ready())doCheck()});if(H.label)chk.textContent=H.label;chk.disabled=!H.ready();
+ var box=$('.body',app),chk=$('#chk'),H=KIND[q.k](q,box,t,function(){chk.disabled=!H.ready();if(autoOk(q,box,H))doCheck()});if(H.label)chk.textContent=H.label;chk.disabled=!H.ready();
  ses.cur={q:q,H:H,t:t,L:L,checked:false}}
 function doCheck(){var c=ses.cur;if(!c||c.checked||!c.H.ready())return;c.checked=true;var r=c.H.check(),q=c.q,t=c.t;$('.body',app).classList.add('locked');$('#chk').hidden=true;
  ses.res[ses.i]={q:q,ok:r.ok,user:r.user||r.text||''};
